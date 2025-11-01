@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PBCTP Journey - Home</title>
+
+    <!-- Font Awesome for the button icon (External dependency for icons only) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- INLINE CSS STYLES -->
+    <style>
+        /* --- Professional Blue Light Mode Theme --- */
+        :root {
+            /* Primary Color (Deep Professional Blue) */
+            --primary-color: #1F4788; 
+            /* Accent Color (Bright Cyan/Blue) */
+            --accent-color: #00A3CC; 
+
+            /* Background and Text */
+            --bg-light: #EBF2FF; /* Very Light Blue/Off-White Background */
+            --card-bg: #FFFFFF; /* Pure White for Cards */
+            --text-dark: #333333; /* Main Dark Text */
+            --text-subtle: #555555; /* Subtle secondary text */
+
+            /* Typography */
+            --font-family: 'Arial', sans-serif;
+            --font-size-base: 1.1rem;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-light); /* Light Background */
+            color: var(--text-dark); /* Dark Text */
+            line-height: 1.6;
+            margin: 0;
+            padding: 50px 0; /* Padding for overall content */
+            font-size: var(--font-size-base);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1 {
+            color: var(--primary-color); /* Deep Blue Title */
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+        
+        strong {
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Introduction Card */
+        #main-content {
+            flex-grow: 1; /* Allows content to push footer down */
+            display: flex;
+            align-items: center;
+        }
+
+        .intro-card {
+            background-color: var(--card-bg);
+            padding: 50px;
+            border-radius: 16px;
+            /* Lighter box shadow for light mode */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+            width: 100%;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--primary-color);
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+        }
+
+        .intro-text p {
+            color: var(--text-subtle);
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        /* Primary Button Style */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #2a61b8; /* Slightly lighter blue */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(31, 71, 136, 0.4);
+        }
+
+        .btn-primary i {
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center; 
+            padding: 20px; 
+            background-color: #DDEEFE; /* Light blue footer bar */
+            color: var(--text-subtle);
+            border-top: 1px solid var(--primary-color);
+            margin-top: 50px;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .intro-card {
+                padding: 30px 20px;
+            }
+            body {
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <section class="container">
+            <div class="intro-card">
+                <!-- Profile Photo Placeholder (Replace the placehold.co URL with your actual photo URL) -->
+                <img 
+                    src="https://placehold.co/180x180/FFFFFF/1F4788?text=Your+Photo" 
+                    alt="Placeholder profile photo" 
+                    class="profile-photo"
+                    onerror="this.onerror=null; this.src='https://placehold.co/180x180/FFFFFF/1F4788?text=Photo';"
+                >
+
+                <h1>My PBCTP Journey</h1>
+
+                <div class="intro-text" style="max-width: 800px; margin: 0 auto 30px;">
+                    <!-- Introductory Essay -->
+                    <p>Greetings! My name is **Ezekiel John M. Evardo**. I am currently enrolled in the Professional Bachelor of Certification in Teaching Program (PBCTP) while proudly serving as a **Provisional Senior High School Teacher I** for the DepEd Schools Division Office (SDO) of Parañaque. This e-Portfolio is a curated digital space documenting my parallel journey of practical teaching and academic growth in the **Philippine Normal University (PNU) Manila**.</p>
+                    <p>This platform maps my transformation into a qualified professional, showcasing artifacts—from detailed lesson plans and assessment tools to philosophical reflections and visual documentation—that demonstrate my mastery of core teaching standards. This portfolio is designed to be a comprehensive and transparent record of my commitment to effective, student-centered learning and professional development. I invite you to explore the evidence of my dedication to the field of education.</p>
+                </div>
+                
+                <!-- Navigation Button to Subjects Page -->
+                <a href="subjects.html" class="btn-primary">
+                    <i class="fas fa-arrow-right"></i> Explore Core Subjects
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer>
+        <p>&copy; 2024 PBCTP E-Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
