@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching Profession - Artifacts & Reflections</title>
 
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome for icons (still needed for sidebar) -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <!-- INLINE CSS STYLES (Twilight Dark Mode with PNU Gold/Blue) -->
@@ -256,30 +256,34 @@
             font-size: 0.9rem;
         }
 
-        /* Arrow Button Styling - HIGH VISIBILITY (50x50 white square, black arrow) */
+        /* Arrow Button Styling - Using PNG Images */
         .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
-            width: 50px; /* Square size */
-            height: 50px; /* Square size */
-            margin-top: -25px; /* Adjust for half the height to center vertically */
+            /* Container size (slightly larger than 30x30 for easy touch/click) */
+            width: 40px; 
+            height: 40px; 
+            margin-top: -20px; /* Adjust for half the container height to center vertically */
             
-            background-color: rgba(255, 255, 255, 1); /* White and opaque */
-            color: #000000; /* Black icon color */
-            
-            font-size: 24px; /* Size of the chevron icon */
-            font-weight: bold;
-            transition: background-color 0.3s, color 0.3s;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            transition: background-color 0.3s;
             user-select: none;
-            display: flex; /* Use flex to perfectly center the icon */
+            display: flex; /* Use flex to perfectly center the image */
             align-items: center;
             justify-content: center;
-            border-radius: 4px; /* Slightly rounded corners */
+            border-radius: 4px; 
             border: none;
-            padding: 0; /* Remove default padding */
+            padding: 0; 
+            z-index: 10; /* Ensure it stays above the image */
         }
         
+        .prev img, .next img {
+            width: 30px; /* Fixed size for the image as requested */
+            height: 30px; /* Fixed size for the image as requested */
+            display: block;
+        }
+
         .prev {
             left: 10px;
         }
@@ -290,7 +294,6 @@
 
         .prev:hover, .next:hover {
             background-color: var(--primary-color); /* Gold background on hover */
-            color: #111; /* Dark text on hover */
         }
 
 
@@ -445,9 +448,13 @@
                         <div id="slide-counter" class="slide-counter"></div>
                         <img id="slideshow-img" class="slideshow-image" alt="Classroom Observation Evidence">
                         <div id="caption-text" class="caption-text"></div>
-                        <!-- High Visibility Arrow Buttons -->
-                        <a class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></a>
-                        <a class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></a>
+                        <!-- Image-based Arrow Buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">
+                            <img src="/eportfolio/images/left.png" alt="Previous Slide Arrow">
+                        </a>
+                        <a class="next" onclick="plusSlides(1)">
+                            <img src="/eportfolio/images/right.png" alt="Next Slide Arrow">
+                        </a>
                     </div>
                     
                     <div class="reflection-box">
