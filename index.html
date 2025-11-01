@@ -8,34 +8,34 @@
     <!-- Font Awesome for the button icon (External dependency for icons only) -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- INLINE CSS STYLES -->
+    <!-- INLINE CSS STYLES (Twilight Dark Mode with PNU Gold/Blue) -->
     <style>
-        /* --- Professional Blue Light Mode Theme --- */
+        /* --- Deep Twilight Dark Mode Theme --- */
         :root {
-            /* Primary Color (Deep Professional Blue) */
-            --primary-color: #1F4788; 
-            /* Accent Color (Bright Cyan/Blue) */
-            --accent-color: #00A3CC; 
+            /* PNU Gold/Yellow for main accent (Primary Highlight) */
+            --primary-color: #FFD700; 
+            /* Subtle Academic Blue (Secondary Accent) */
+            --accent-color: #4C70A0; 
 
             /* Background and Text */
-            --bg-light: #EBF2FF; /* Very Light Blue/Off-White Background */
-            --card-bg: #FFFFFF; /* Pure White for Cards */
-            --text-dark: #333333; /* Main Dark Text */
-            --text-subtle: #555555; /* Subtle secondary text */
+            --bg-dark: #213B59; /* UPDATED: Lighter, more visible deep blue background */
+            --card-bg: #304D70; /* UPDATED: Lighter card contrast */
+            --text-light: #F0F4F8; /* Main light text for dark mode */
+            --text-subtle: #C0C8D0; /* Subtle secondary text */
 
             /* Typography */
-            --font-family: 'Arial', sans-serif;
+            --font-family: 'Inter', sans-serif;
             --font-size-base: 1.1rem;
         }
 
         /* Base Styles */
         body {
             font-family: var(--font-family);
-            background-color: var(--bg-light); /* Light Background */
-            color: var(--text-dark); /* Dark Text */
+            background-color: var(--bg-dark); /* Dark Background */
+            color: var(--text-light); /* Light Text */
             line-height: 1.6;
             margin: 0;
-            padding: 50px 0; /* Padding for overall content */
+            padding: 50px 0;
             font-size: var(--font-size-base);
             min-height: 100vh;
             display: flex;
@@ -51,16 +51,17 @@
 
         /* Typography */
         h1 {
-            color: var(--primary-color); /* Deep Blue Title */
+            color: var(--primary-color); /* Gold Title */
             font-size: 2.8rem;
             margin-bottom: 20px;
-            border-bottom: 2px solid var(--accent-color);
+            /* Gold dividing line */
+            border-bottom: 2px solid var(--primary-color); 
             padding-bottom: 10px;
             display: inline-block;
         }
         
         strong {
-            color: var(--primary-color);
+            color: var(--primary-color); /* Highlight important names/titles in Gold */
         }
 
         p {
@@ -69,7 +70,7 @@
 
         /* Introduction Card */
         #main-content {
-            flex-grow: 1; /* Allows content to push footer down */
+            flex-grow: 1;
             display: flex;
             align-items: center;
         }
@@ -78,10 +79,12 @@
             background-color: var(--card-bg);
             padding: 50px;
             border-radius: 16px;
-            /* Lighter box shadow for light mode */
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); 
+            /* Subtle shadow for dark mode */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
             text-align: center;
             width: 100%;
+            /* Subtle blue border hint */
+            border: 1px solid var(--accent-color); 
         }
 
         .profile-photo {
@@ -89,39 +92,44 @@
             height: 180px;
             object-fit: cover;
             border-radius: 50%;
-            border: 5px solid var(--primary-color);
+            /* Gold border for photo */
+            border: 5px solid var(--primary-color); 
             margin-bottom: 25px;
             transition: transform 0.3s;
         }
 
         .profile-photo:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 20px var(--primary-color);
         }
 
         .intro-text p {
-            color: var(--text-subtle);
+            color: var(--text-light); /* ADJUSTED: Using the bright light text color for vibrancy */
             font-size: 1rem;
             text-align: justify;
         }
-
+        
         /* Primary Button Style */
         .btn-primary {
             display: inline-block;
-            background-color: var(--primary-color);
-            color: #FFFFFF;
+            background-color: var(--accent-color); /* Blue base for the button */
+            color: var(--text-light);
             text-decoration: none;
             padding: 12px 25px;
             border-radius: 8px;
             font-weight: bold;
             margin-top: 30px;
             transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-            border: 1px solid var(--primary-color);
+            /* Subtle gold border for the button */
+            border: 2px solid var(--primary-color); 
         }
 
         .btn-primary:hover {
-            background-color: #2a61b8; /* Slightly lighter blue */
+            background-color: #5d8ab5; /* Slightly lighter blue on hover */
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(31, 71, 136, 0.4);
+            /* Stronger shadow with Gold accent on hover */
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4); 
+            color: var(--primary-color); /* Text turns gold on hover */
         }
 
         .btn-primary i {
@@ -132,9 +140,9 @@
         footer {
             text-align: center; 
             padding: 20px; 
-            background-color: #DDEEFE; /* Light blue footer bar */
+            background-color: #172A47; /* Darker base for the footer */
             color: var(--text-subtle);
-            border-top: 1px solid var(--primary-color);
+            border-top: 1px solid var(--accent-color);
             margin-top: 50px;
         }
 
@@ -158,12 +166,12 @@
     <main id="main-content">
         <section class="container">
             <div class="intro-card">
-                <!-- Profile Photo Placeholder (Replace the placehold.co URL with your actual photo URL) -->
+                <!-- Profile Photo Placeholder (Ensure you update the src with your actual file path) -->
                 <img 
-                    src="https://placehold.co/180x180/FFFFFF/1F4788?text=Your+Photo" 
+                    src="images/profile.jpg" 
                     alt="Placeholder profile photo" 
                     class="profile-photo"
-                    onerror="this.onerror=null; this.src='https://placehold.co/180x180/FFFFFF/1F4788?text=Photo';"
+                    onerror="this.onerror=null; this.src='https://placehold.co/180x180/304D70/FFD700?text=Photo';"
                 >
 
                 <h1>My PBCTP Journey</h1>
