@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PBCTP Journey - Home</title>
+    <title>My PBCTP Journey</title>
 
-    <!-- Font Awesome for the button icon (External dependency for icons only) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome for the button icon (External dependency for icons only) --><script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    <!-- INLINE CSS STYLES (Twilight Dark Mode with PNU Gold/Blue) -->
-    <style>
+    <!-- INLINE CSS STYLES (Twilight Dark Mode with PNU Gold/Blue) --><style>
         /* --- Deep Twilight Dark Mode Theme --- */
         :root {
             /* PNU Gold/Yellow for main accent (Primary Highlight) */
@@ -58,6 +56,7 @@
             border-bottom: 2px solid var(--primary-color); 
             padding-bottom: 10px;
             display: inline-block;
+            line-height: 1.2; /* Adjusted for better vertical alignment */
         }
         
         strong {
@@ -73,7 +72,7 @@
             flex-grow: 1;
             display: flex;
             align-items: center;
-            justify-content: center; /* FIX: Explicitly centers the card horizontally */
+            justify-content: center; /* Explicitly centers the card horizontally */
         }
 
         .intro-card {
@@ -89,8 +88,8 @@
         }
 
         .profile-photo {
-            width: 180px;
-            height: 180px;
+            width: 220px; /* INCREASED SIZE */
+            height: 220px; /* INCREASED SIZE */
             object-fit: cover;
             border-radius: 50%;
             /* Gold border for photo */
@@ -105,7 +104,7 @@
         }
 
         .intro-text p {
-            color: var(--text-light); /* ADJUSTED: Using the bright light text color for vibrancy */
+            color: var(--text-light); /* Using the bright light text color for vibrancy */
             font-size: 1rem;
             text-align: justify;
         }
@@ -158,42 +157,41 @@
             body {
                 padding: 20px 0;
             }
+            .profile-photo {
+                width: 180px; /* Adjust size for smaller screens */
+                height: 180px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Main Content Area -->
-    <main id="main-content">
+    <!-- Main Content Area --><main id="main-content">
         <section class="container">
             <div class="intro-card">
-                <!-- Profile Photo Placeholder (Ensure you update the src with your actual file path) -->
-                <img 
+                <!-- Profile Photo Placeholder (Ensure you update the src with your actual file path) --><img 
                     src="images/profile.jpg" 
                     alt="Placeholder profile photo" 
                     class="profile-photo"
-                    onerror="this.onerror=null; this.src='https://placehold.co/180x180/304D70/FFD700?text=Photo';"
+                    onerror="this.onerror=null; this.src='https://placehold.co/220x220/304D70/FFD700?text=Photo';"
                 >
 
                 <h1>My PBCTP Journey</h1>
 
                 <div class="intro-text" style="max-width: 800px; margin: 0 auto 30px;">
-                    <!-- Introductory Essay -->
-                    <p>Greetings! My name is <b>Ezekiel John M. Evardo</b>. I am currently enrolled in the Professional Bachelor of Certification in Teaching Program (PBCTP) while proudly serving as a <b>Provisional Senior High School Teacher I</b> for the DepEd Schools Division Office (SDO) of Parañaque. This e-Portfolio is a curated digital space documenting my parallel journey of practical teaching and academic growth in the <b>Philippine Normal University (PNU) Manila</b>.</p>
+                    <!-- Introductory Essay --><p>Greetings! My name is <b>Ezekiel John M. Evardo</b>. I am currently enrolled in the Professional Bachelor of Certification in Teaching Program (PBCTP) while proudly serving as a <b>Provisional Senior High School Teacher I</b> for the DepEd Schools Division Office (SDO) of Parañaque. This e-Portfolio is a curated digital space documenting my parallel journey of practical teaching and academic growth in the <b>Philippine Normal University (PNU) Manila</b>.</p>
                     <p>This platform maps my transformation into a qualified professional, showcasing artifacts—from detailed lesson plans and assessment tools to philosophical reflections and visual documentation—that demonstrate my mastery of core teaching standards. This portfolio is designed to be a comprehensive and transparent record of my commitment to effective, student-centered learning and professional development. I invite you to explore the evidence of my dedication to the field of education.</p>
                 </div>
                 
-                <!-- Navigation Button to Subjects Page -->
-                <a href="subjects.html" class="btn-primary">
+                <!-- Navigation Button to Subjects Page --><a href="subjects.html" class="btn-primary">
                     <i class="fas fa-arrow-right"></i> Explore Core Subjects
                 </a>
             </div>
         </section>
     </main>
 
-    <!-- Simple Footer -->
-    <footer>
-        <p>&copy; 2024 PBCTP E-Portfolio. All Rights Reserved.</p>
+    <!-- Simple Footer --><footer>
+        <p>&copy; 2025 Ezekiel John M. Evardo PBCTP E-Portfolio. All Rights Reserved.</p>
     </footer>
 
 </body>
