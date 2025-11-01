@@ -272,11 +272,13 @@
         }
         
         /* Style for the actual reflection text inside the box */
-        .reflection-box p {
+        .main-reflection-text {
             color: var(--text-light);
-            margin: 0;
+            margin: 0 0 10px 0; /* Add margin bottom for separation from goals */
+            padding: 0;
             text-align: justify; 
-            text-indent: 1.5em; /* Keep text justified and indented for main reflection */
+            text-indent: 0; /* Remove indent to keep it flush with goal blocks */
+            font-size: 0.95rem; 
         }
 
         /* CRITICAL FIX: Custom class to guarantee strong bolding for keywords/goals */
@@ -297,7 +299,6 @@
             font-weight: 800; 
             color: var(--primary-color);
             padding-bottom: 3px; 
-            /* Remove margins from the label itself */
             margin: 0; 
         }
 
@@ -306,6 +307,7 @@
             margin: 0;
             padding: 0 5px; /* Slight padding to avoid justification hitting the edge */
             text-indent: 0 !important; /* IMPORTANT: Remove the indent for the goal description */
+            font-size: 0.95rem;
         }
         /* --- END GOAL SPECIFIC STYLING --- */
 
@@ -460,7 +462,7 @@
                     
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>This artifact demonstrates my <span class="highlight-strong">Historical Analysis</span> and <span class="highlight-strong">Curriculum Critique</span> competencies. I accomplished a better understanding that education's true quality lies in its <span class="highlight-strong">practical application</span> and cultural relevance, moving beyond mere theoretical knowledge. Critically, I reflected on my own experience, realizing that subjects often remain disconnected from real-world needs unless actively translated into practical skills. This drives my continued growth:</p>
+                        <p class="main-reflection-text">This artifact demonstrates my <span class="highlight-strong">Historical Analysis</span> and <span class="highlight-strong">Curriculum Critique</span> competencies. I accomplished a better understanding that education's true quality lies in its <span class="highlight-strong">practical application</span> and cultural relevance, moving beyond mere theoretical knowledge. Critically, I reflected on my own experience, realizing that subjects often remain disconnected from real-world needs unless actively translated into practical skills. This drives my continued growth:</p>
                         
                         <!-- Short Term Goal -->
                         <div class="goal-block">
@@ -472,9 +474,10 @@
                         <div class="goal-block">
                             <span class="goal-label highlight-strong">Long-Term Goal:</span>
                             <p class="goal-text">I aim to completely restructure my curriculum development philosophy to prioritize <span class="highlight-strong">relevant, project-based learning (PBL)</span> outcomes that directly connect student work to career preparation and life skills, fulfilling my vision of practicality in education.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- END OF CARD 1 -->
 
             <!-- Card 2: Own Teaching Philosophy (Sep 18) -->
             <div class="artifact-card">
@@ -495,7 +498,7 @@
 
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>This accomplishment showcases my <span class="highlight-strong">Philosophical Articulation</span> and <span class="highlight-strong">Instructional Strategy Development</span> competencies. I affirmed that effective teaching focuses on providing the learner with a "set of tools to be understood, owned, and applied" rather than a list of facts. The growth here is my intentional shift toward simplification, using practical methods like Problem-based Learning and the Feynman Technique.</p>
+                        <p class="main-reflection-text">This accomplishment showcases my <span class="highlight-strong">Philosophical Articulation</span> and <span class="highlight-strong">Instructional Strategy Development</span> competencies. I affirmed that effective teaching focuses on providing the learner with a "set of tools to be understood, owned, and applied" rather than a list of facts. The growth here is my intentional shift toward simplification, using practical methods like Problem-based Learning and the Feynman Technique.</p>
                         
                         <!-- Short Term Goal -->
                         <div class="goal-block">
@@ -507,9 +510,10 @@
                         <div class="goal-block">
                             <span class="goal-label highlight-strong">Long-Term Goal:</span>
                             <p class="goal-text">My ongoing professional goal is to continuously refine my role as a "<span class="highlight-strong">Translator</span>," ensuring at least 90% of instructional time in my classes is dedicated to conceptual application and problem-solving, rather than pure theoretical lecture, establishing a truly learner-centric environment.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- END OF CARD 2 -->
 
             <!-- Card 3: Case Analysis Violations (Sep 20) -->
             <div class="artifact-card">
@@ -530,7 +534,7 @@
                     
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>This artifact demonstrates my <span class="highlight-strong">Legal Literacy</span> and <span class="highlight-strong">Risk Management</span> competencies. The key growth point was realizing that severe incidents require a comprehensive, legal, and psychological approach, strictly adhering to <span class="highlight-strong">due process</span> (like the protections under RA 4670). I accomplished a greater understanding of my responsibilities in ensuring institutional safety.</p>
+                        <p class="main-reflection-text">This artifact demonstrates my <span class="highlight-strong">Legal Literacy</span> and <span class="highlight-strong">Risk Management</span> competencies. The key growth point was realizing that severe incidents require a comprehensive, legal, and psychological approach, strictly adhering to <span class="highlight-strong">due process</span> (like the protections under RA 4670). I accomplished a greater understanding of my responsibilities in ensuring institutional safety.</p>
                         
                         <!-- Short Term Goal -->
                         <div class="goal-block">
@@ -542,9 +546,10 @@
                         <div class="goal-block">
                             <span class="goal-label highlight-strong">Long-Term Goal:</span>
                             <p class="goal-text">I aim to proactively contribute to school governance by proposing one formal <span class="highlight-strong">policy amendment</span> (e.g., regarding the implementation of safety inspections or clear student-teacher communication guidelines) to the school administration within the next academic year.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- END OF CARD 3 -->
 
             <!-- Card 4: Reflect Education Periods (Sep 20) -->
             <div class="artifact-card">
@@ -565,7 +570,7 @@
                     
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>This artifact demonstrates my <span class="highlight-strong">Socio-Historical Awareness</span> and commitment to <span class="highlight-strong">Equity Commitment</span>. The accomplishment is the profound realization that education has historically served as a tool for social stratification, a pattern confirmed by my own career struggles. This new perspective now forms the guiding principle of my practice, committing me to an intentional and equitable approach.</p>
+                        <p class="main-reflection-text">This artifact demonstrates my <span class="highlight-strong">Socio-Historical Awareness</span> and commitment to <span class="highlight-strong">Equity Commitment</span>. The accomplishment is the profound realization that education has historically served as a tool for social stratification, a pattern confirmed by my own career struggles. This new perspective now forms the guiding principle of my practice, committing me to an intentional and equitable approach.</p>
                         
                         <!-- Short Term Goal -->
                         <div class="goal-block">
@@ -577,9 +582,10 @@
                         <div class="goal-block">
                             <span class="goal-label highlight-strong">Long-Term Goal:</span>
                             <p class="goal-text">I commit to maintaining a career-long practice of using education as an <span class="highlight-strong">anti-stratification tool</span>, ensuring my teaching actively bridges the gap between academic theory and practical life skills for all students, regardless of background.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- END OF CARD 4 -->
             
             <!-- Card 5: Reflect Philosophical Foundations (Sep 20) -->
             <div class="artifact-card">
@@ -600,7 +606,7 @@
                     
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>This artifact demonstrates my competency in <span class="highlight-strong">Curriculum Adaptability</span> and <span class="highlight-strong">Future-Ready Pedagogy</span>. My deepest insight is that the speed of the modern world requires me to teach not just information, but the <span class="highlight-strong">mindset and skills of a lifelong learner</span>. This realization, sparked by my own career shift, has defined my professional growth.</p>
+                        <p class="main-reflection-text">This artifact demonstrates my competency in <span class="highlight-strong">Curriculum Adaptability</span> and <span class="highlight-strong">Future-Ready Pedagogy</span>. My deepest insight is that the speed of the modern world requires me to teach not just information, but the <span class="highlight-strong">mindset and skills of a lifelong learner</span>. This realization, sparked by my own career shift, has defined my professional growth.</p>
                         
                         <!-- Short Term Goal -->
                         <div class="goal-block">
@@ -612,9 +618,10 @@
                         <div class="goal-block">
                             <span class="goal-label highlight-strong">Long-Term Goal:</span>
                             <p class="goal-text">My professional commitment is to transform my classroom into a <span class="highlight-strong">dynamic workshop environment</span>, ensuring every lesson emphasizes adaptability and critical thinking over rote memorization, preparing students for future jobs that do not yet exist.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- END OF CARD 5 -->
 
             <!-- Card 6: Reflect Education Laws (Sep 22) -->
             <div class="artifact-card">
@@ -635,7 +642,7 @@
                     
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>This artifact demonstrates my <span class="highlight-strong">Professional Self-Advocacy</span> and <span class="highlight-strong">Legal Risk Awareness</span> competencies. The key growth point is recognizing the legal and public pressure that leaves educators vulnerable, creating a sense of "walking on eggshells" when managing discipline. I accomplished a critical review of the laws that impact my daily duties.</p>
+                        <p class="main-reflection-text">This artifact demonstrates my <span class="highlight-strong">Professional Self-Advocacy</span> and <span class="highlight-strong">Legal Risk Awareness</span> competencies. The key growth point is recognizing the legal and public pressure that leaves educators vulnerable, creating a sense of "walking on eggshells" when managing discipline. I accomplished a critical review of the laws that impact my daily duties.</p>
                         
                         <!-- Short Term Goal -->
                         <div class="goal-block">
@@ -647,9 +654,10 @@
                         <div class="goal-block">
                             <span class="goal-label highlight-strong">Long-Term Goal:</span>
                             <p class="goal-text">My goal is to master the balance between student empathy and firm boundary-setting to maintain <span class="highlight-strong">professional authority</span> while adhering to legal constraints, protecting both the learning environment and my career integrity.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- END OF CARD 6 -->
 
             <!-- Card 7: Classroom Observation (Oct 19) - The Synthesis of Practice -->
             <div class="artifact-card">
@@ -690,7 +698,7 @@
                     
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>This observation artifact demonstrates my <span class="highlight-strong">Instructional Observation</span> and <span class="highlight-strong">Philosophical Integration</span> competencies. The key accomplishment was realizing that great teaching is a deliberate philosophical synthesis—blending the practical (Pragmatism), the objective (Realism), and the engaging (Zen). My initial mistake and subsequent correction confirmed that effective instruction must intentionally integrate these elements.</p>
+                        <p class="main-reflection-text">This observation artifact demonstrates my <span class="highlight-strong">Instructional Observation</span> and <span class="highlight-strong">Philosophical Integration</span> competencies. The key accomplishment was realizing that great teaching is a deliberate philosophical synthesis—blending the practical (Pragmatism), the objective (Realism), and the engaging (Zen). My initial mistake and subsequent correction confirmed that effective instruction must intentionally integrate these elements.</p>
                         
                         <!-- Short Term Goal -->
                         <div class="goal-block">
@@ -702,9 +710,10 @@
                         <div class="goal-block">
                             <span class="goal-label highlight-strong">Long-Term Goal:</span>
                             <p class="goal-text">My professional aspiration is to achieve the observed level of <span class="highlight-strong">philosophical mastery</span>, where all my instructional methods flow naturally and subconsciously as sound expressions of educational theory.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- END OF CARD 7 -->
             
         </div>
         
