@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teaching Profession - Artifacts & Reflections</title>
 
-    <!-- Font Awesome for icons (still needed for sidebar) -->
+    <!-- Font Awesome for icons (still needed for sidebar and link cards) -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <!-- INLINE CSS STYLES (Twilight Dark Mode with PNU Gold/Blue) -->
@@ -210,8 +210,6 @@
 
         .access-card a {
             color: var(--primary-color);
-            font-size: 1rem;
-            font-weight: bold;
             text-decoration: none;
             display: block; /* Make the link fill the card area */
             padding: 0; /* Remove internal padding */
@@ -221,9 +219,37 @@
         .access-card:hover a {
             color: var(--text-dark); /* Dark text on gold hover */
         }
+
+        /* Styling for the icon/main text part */
+        .access-card-title-main {
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px; /* Space between main title and document title */
+        }
+
+        .access-card-title-main i {
+            margin-right: 10px;
+            font-size: 1.25rem;
+        }
+
+        /* Styling for the document title part */
+        .access-card-doc-title {
+            font-size: 0.9rem;
+            font-weight: normal;
+            display: block;
+            color: #B0B8C0; /* Explicitly set to a light gray color */
+        }
         
-        .access-card a i {
-            margin-right: 8px;
+        /* Adjust colors on hover */
+        .access-card:hover .access-card-title-main {
+            color: var(--text-dark);
+        }
+
+        .access-card:hover .access-card-doc-title {
+            color: var(--text-dark);
         }
         /* --- END DOCUMENT ACCESS CARD STYLES --- */
 
@@ -355,7 +381,7 @@
     <nav class="sidebar">
         <h4><i class="fas fa-list-alt"></i> Artifact Index</h4>
         <ul>
-            <li><a href="#artifact-1">Evolution of Ed.</a></li>
+            <li><a href="#artifact-1">Evolution & Practicality</a></li>
             <li><a href="#artifact-2">Teaching Philosophy</a></li>
             <li><a href="#artifact-3">Case Analysis</a></li>
             <li><a href="#artifact-4">Stratification</a></li>
@@ -394,7 +420,10 @@
                     <!-- Access Card -->
                     <div class="access-card">
                         <a href="artifacts/teaching_profession/TP-2025-09-14-worksheeteducperiod.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Submitted Document
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">Reflecting on the Evolution and Practicality of Philippine Education</span>
                         </a>
                     </div>
                     
@@ -415,7 +444,10 @@
                     <!-- Access Card -->
                     <div class="access-card">
                         <a href="artifacts/teaching_profession/TP-2025-09-18-ownteachingphilosophy.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Submitted Document
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Educator as Translator: My Philosophy on Demystifying Knowledge</span>
                         </a>
                     </div>
 
@@ -436,7 +468,10 @@
                     <!-- Access Card -->
                     <div class="access-card">
                         <a href="artifacts/teaching_profession/TP-2025-09-20-caseanalysisviolations.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Submitted Document
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">Upholding Due Process: Legal and Proactive Measures in School Safety</span>
                         </a>
                     </div>
                     
@@ -457,7 +492,10 @@
                     <!-- Access Card -->
                     <div class="access-card">
                         <a href="artifacts/teaching_profession/TP-2025-09-20-reflecteducperiods.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Submitted Document
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">From Stratification to Empowerment: Re-Shaping My Teaching Philosophy</span>
                         </a>
                     </div>
                     
@@ -478,7 +516,10 @@
                     <!-- Access Card -->
                     <div class="access-card">
                         <a href="artifacts/teaching_profession/TP-2025-09-20-reflectphilofoundations.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Submitted Document
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Progressive Teacher: Facilitating Lifelong Learning in a Rapidly Changing World</span>
                         </a>
                     </div>
                     
@@ -499,7 +540,10 @@
                     <!-- Access Card -->
                     <div class="access-card">
                         <a href="artifacts/teaching_profession/TP-2025-09-22-reflecteduclaws.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Submitted Document
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Vulnerable Educator: The Disconnect Between Teacher Authority and Legal Protection</span>
                         </a>
                     </div>
                     
@@ -526,7 +570,10 @@
                     <!-- Access Card -->
                     <div class="access-card">
                         <a href="artifacts/teaching_profession/TP-2025-10-19-classroomobservationtool.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Submitted Document
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Synthesis of Practice: Pragmatism, Realism, and Zen in TLE Instruction</span>
                         </a>
                     </div>
                     
