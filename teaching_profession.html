@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching Profession - Artifacts & Reflections</title>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- INLINE CSS STYLES (Twilight Dark Mode with PNU Gold/Blue) -->
+    <style>
+        /* --- Deep Twilight Dark Mode Theme --- */
+        :root {
+            --primary-color: #FFD700; /* PNU Gold/Yellow */
+            --accent-color: #4C70A0; /* Subtle Academic Blue */
+            --bg-dark: #213B59; /* Deep blue background */
+            --card-bg: #304D70; /* Card contrast */
+            --sidebar-bg: #172A47; /* Distinct background for sidebar */
+            --text-light: #F0FF00; /* Main light text for dark mode */
+            --text-subtle: #C0C8D0; 
+            --font-family: 'Inter', sans-serif;
+            --font-size-base: 1.1rem;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0; 
+            font-size: var(--font-size-base);
+            min-height: 100vh;
+            scroll-behavior: smooth; /* Smooth scroll to anchors */
+        }
+
+        /* --- SIDEBAR STYLES --- */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: var(--sidebar-bg); 
+            padding: 20px 0;
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4);
+            overflow-y: auto; 
+            z-index: 1000;
+        }
+
+        .sidebar h4 {
+            color: var(--primary-color);
+            padding: 0 20px 10px 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--text-subtle);
+            text-decoration: none;
+            transition: background-color 0.2s, color 0.2s;
+            font-size: 0.95rem;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar li a:hover {
+            background-color: var(--card-bg);
+            color: var(--text-light);
+            border-left: 3px solid var(--primary-color);
+        }
+
+        /* --- MAIN CONTENT STYLES --- */
+        .container {
+            max-width: 750px; 
+            margin-left: 290px; 
+            margin-right: auto;
+            padding: 50px 20px; 
+            min-height: calc(100vh - 100px); 
+        }
+
+        /* Header and Navigation */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .header h2 {
+            color: var(--accent-color);
+            font-size: 1.7rem;
+            margin-bottom: 30px;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        /* Artifact Card List */
+        .artifact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* Artifact Card Layout */
+        .artifact-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid var(--primary-color); 
+            margin-top: 5px; 
+            padding-top: 30px; 
+        }
+        
+        .artifact-card a {
+             color: var(--primary-color);
+             text-decoration: none;
+             font-weight: bold;
+             transition: color 0.2s;
+        }
+
+        .artifact-card a:hover {
+            color: #FFFFF0; 
+        }
+
+        .artifact-content h4 {
+            color: var(--text-light);
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .artifact-date {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .artifact-content p {
+            font-size: 0.95rem;
+            color: var(--text-subtle);
+            margin-bottom: 15px;
+        }
+        
+        .artifact-context {
+            font-style: italic;
+            padding: 10px;
+            border: 1px dashed var(--accent-color);
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .reflection-box {
+            background-color: #3e5a80; 
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .reflection-box strong {
+            color: var(--primary-color);
+        }
+
+        /* --- SLIDESHOW STYLES --- */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #111;
+        }
+
+        .slideshow-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px 8px 0 0;
+            /* Placeholder for images */
+            min-height: 250px; 
+            object-fit: cover;
+        }
+
+        .caption-text {
+            color: var(--text-light);
+            padding: 10px 15px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+            font-size: 0.9rem;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            line-height: 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(255, 215, 0, 0.8);
+            color: #111;
+        }
+
+
+        /* Responsive adjustments (Hide sidebar on mobile) */
+        @media (max-width: 1024px) {
+            .sidebar {
+                display: none; 
+            }
+            .container {
+                max-width: 900px; 
+                margin: 0 auto; 
+                padding: 30px 20px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- --- LEFT SIDEBAR: QUICK ACCESS NAVIGATION --- -->
+    <nav class="sidebar">
+        <h4><i class="fas fa-list-alt"></i> Artifact Index</h4>
+        <ul>
+            <li><a href="#artifact-1">Evolution of Ed.</a></li>
+            <li><a href="#artifact-2">Teaching Philosophy</a></li>
+            <li><a href="#artifact-3">Case Analysis</a></li>
+            <li><a href="#artifact-4">Stratification</a></li>
+            <li><a href="#artifact-5">Progressivism</a></li>
+            <li><a href="#artifact-6">Vulnerable Educator</a></li>
+            <li><a href="#artifact-7">Synthesis of Practice</a></li>
+        </ul>
+        <a href="subjects.html" class="back-btn" style="margin: 20px 20px 0; display: block; text-align: center; background-color: var(--accent-color);">
+            <i class="fas fa-arrow-left"></i> Back to Core Subjects
+        </a>
+    </nav>
+
+
+    <div class="container">
+        
+        <!-- Back to Core Subjects Button (Visible on Mobile/Smaller Screens) -->
+        <a href="subjects.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Core Subjects</a>
+
+        <!-- Page Header -->
+        <div class="header">
+            <h1>Teaching Profession</h1>
+            <h2>2E-Educ-1 | Dr. Rosemarievic V. Diaz</h2>
+            <p style="color: var(--text-subtle);">This section presents all submitted outputs and artifacts for the course, arranged in chronological order of submission to show the development of my professional teaching understanding.</p>
+        </div>
+        
+        <!-- --- CHRONOLOGICAL ARTIFACT LIST --- -->
+        <div class="artifact-list">
+            
+            <!-- Card 1: Education Periods Worksheet (Sep 14) -->
+            <div class="artifact-card">
+                <div class="artifact-content">
+                    <h4 id="artifact-1">Reflecting on the Evolution and Practicality of Philippine Education</h4>
+                    <span class="artifact-date">Date Submitted: September 14, 2025</span>
+                    <p>This worksheet activity involved selecting and analyzing four significant educational periods—Pre-Philippine, Counter-Reformationist Modern, Holistic Modern, and Japanese Occupation Education—to identify their key contributions and relate their practices to the present-day Philippine education system.</p>
+                    <p>Access Document: <a href="artifacts/teaching_profession/TP-2025-09-14-worksheeteducperiod.pdf" target="_blank">TP-2025-09-14-worksheeteducperiod.pdf</a></p>
+                    <div class="reflection-box">
+                        <strong>Reflection:</strong> I learned that quality education is fundamentally about practical application and cultural relevance, not just the memorization of facts. The activity highlighted that meaningful learning, from the Pre-Philippine emphasis on skills for daily living to the Counter-Reformationist push for vernacular learning, provides students with a toolkit for better life outcomes and personal well-being. Critically, I reflected on my own experience, realizing that knowledge, like trigonometry or botany, often remains disconnected from real-world problems and personal needs unless it's translated into practical and relevant skills, such as those promoted by project-based learning and TVL tracks.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Own Teaching Philosophy (Sep 18) -->
+            <div class="artifact-card">
+                <div class="artifact-content">
+                    <h4 id="artifact-2">The Educator as Translator: My Philosophy on Demystifying Knowledge</h4>
+                    <span class="artifact-date">Date Submitted: September 18, 2025</span>
+                    <p>This entry outlines my personal teaching philosophy, which frames education as an "act of demystification" where the educator's primary role is to act as a "translator" to render complex, technical knowledge into simple, accessible ideas for the learner.</p>
+                    <p>Access Document: <a href="artifacts/teaching_profession/TP-2025-09-18-ownteachingphilosophy.pdf" target="_blank">TP-2025-09-18-ownteachingphilosophy.pdf</a></p>
+                    <div class="reflection-box">
+                        <strong>Reflection:</strong> My primary realization from developing this philosophy is that effective teaching focuses on providing the learner with a "set of tools to be understood, owned, and applied" rather than just a list of facts to be memorized. I affirmed that the process must be one of simplification and application. This requires intentionally integrating practical methods such as Problem-based Learning, Active Recall/Peer Teaching (inspired by the Feynman Technique), and the necessary use of the vernacular to achieve conceptual mastery. Ultimately, this demystification approach is a transformative process that empowers learners to develop into active, critical thinkers capable of using technical knowledge as a tool to solve real-world problems.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Case Analysis Violations (Sep 20) -->
+            <div class="artifact-card">
+                <div class="artifact-content">
+                    <h4 id="artifact-3">Upholding Due Process: Legal and Proactive Measures in School Safety</h4>
+                    <span class="artifact-date">Date Submitted: September 20, 2025</span>
+                    <p>This case analysis activity involved examining real-world scenarios of violations committed against both the school and teachers, identifying the relevant laws violated, and proposing actionable plans to prevent similar incidents from recurring.</p>
+                    <p>Access Document: <a href="artifacts/teaching_profession/TP-2025-09-20-caseanalysisviolations.pdf" target="_blank">TP-2025-09-20-caseanalysisviolations.pdf</a></p>
+                    <div class="reflection-box">
+                        <strong>Reflection:</strong> The most crucial learning from this analysis is the necessity of implementing proactive, multilayered safety policies and strictly adhering to due process to protect both educators and learners. I realized that severe incidents, such as a student fatally stabbing a classmate or the murder of a teacher over a failing grade, transcend simple school discipline and constitute violations of serious laws like the Revised Penal Code. The case of the teacher publicly pressured to resign underscored the vital importance of the Magna Carta for Public School Teachers (RA 4670), which guarantees every teacher the right to a proper investigation without external compromise. The suggested preventative measures—such as daily inspections of student belongings, strengthening guidance and counseling services, and promoting transparency in grading—demonstrate that true institutional safety requires a comprehensive, legal, and psychological approach.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Reflect Education Periods (Sep 20) -->
+            <div class="artifact-card">
+                <div class="artifact-content">
+                    <h4 id="artifact-4">From Stratification to Empowerment: Re-Shaping My Teaching Philosophy</h4>
+                    <span class="artifact-date">Date Submitted: September 20, 2025</span>
+                    <p>This reflection analyzes the historical evolution of Western and Philippine education, revealing that it has often functioned as a tool for social stratification, which the author confirms through their own post-graduation and career experience.</p>
+                    <p>Access Document: <a href="artifacts/teaching_profession/TP-2025-09-20-reflecteducperiods.pdf" target="_blank">TP-2025-09-20-reflecteducperiods.pdf</a></p>
+                    <div class="reflection-box">
+                        <strong>Reflection:</strong> The most profound lesson I took from this historical study is the realization that education has consistently been a powerful tool for social stratification. I observed this pattern from medieval European exclusivity to the American colonizers' policy, which simply created a new social ladder where English proficiency measured intelligence and social standing. My own initial post-graduation struggle, where my diploma didn't immediately lead to a career and I accepted a low-paying instructor job, served as a firsthand lesson in this stratification. This new perspective is now the guiding principle of my teaching. I am committed to an intentional approach that teaches not just the "what" but the "why," and I will make my classroom a space where different kinds of knowledge—from textbooks or from students' own lives—are valued equally. My goal is to ensure education is a tool for improving lives financially and practically, thus turning my personal frustration into a purposeful practice of true empowerment.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 5: Reflect Philosophical Foundations (Sep 20) -->
+            <div class="artifact-card">
+                <div class="artifact-content">
+                    <h4 id="artifact-5">The Progressive Teacher: Facilitating Lifelong Learning in a Rapidly Changing World</h4>
+                    <span class="artifact-date">Date Submitted: September 20, 2025</span>
+                    <p>This reflection explores the Progressivism philosophy, questioning why the progressive ideals of our current education system struggle to keep pace with the rapidly evolving demands of the modern career landscape, which the author confirms through their personal experience as a career-shifting psychology major.</p>
+                    <p>Access Document: <a href="artifacts/teaching_profession/TP-2025-09-20-reflectphilofoundations.pdf" target="_blank">TP-2025-09-20-reflectphilofoundations.pdf</a></p>
+                    <div class="reflection-box">
+                        <strong>Reflection:</strong> My deepest insight from exploring philosophical foundations, particularly Progressivism, is that the greatest challenge to our education system is not ineffectiveness, but the sheer speed at which the world evolves. I found it jarring that even with a progressive-minded curriculum like K-12, career struggles are common, as experienced by me and my classmates—graduates who shifted from profitable fields like Psychology into roles like BPO or Virtual Assistance due to market demands. This realization has defined my role as a future teacher: I must transform my classroom from a repository of stagnant knowledge into a dynamic workshop. The most valuable skill I can give students is not a specific piece of information, but the mindset and foundational skills to adapt and learn for the rest of their lives. Therefore, my approach will intentionally use project-based activities and real-world case studies while sharing my own story as a career shifter to embody adaptability and resilience.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Reflect Education Laws (Sep 22) -->
+            <div class="artifact-card">
+                <div class="artifact-content">
+                    <h4 id="artifact-6">The Vulnerable Educator: The Disconnect Between Teacher Authority and Legal Protection</h4>
+                    <span class="artifact-date">Date Submitted: September 22, 2025</span>
+                    <p>This reflection analyzes the legal landscape concerning teachers and education in the Philippines, highlighting a critical disconnect between the disciplinary authority educators are expected to have and the legal and public protection they are actually afforded.</p>
+                    <p>Access Document: <a href="artifacts/teaching_profession/TP-2025-09-22-reflecteduclaws.pdf" target="_blank">TP-2025-09-22-reflecteduclaws.pdf</a></p>
+                    <div class="reflection-box">
+                        <strong>Reflection:</strong> The most significant lesson I learned is that the current legal framework, while intending to safeguard student welfare, often leaves educators in a difficult and vulnerable position. This tension creates a situation where the basic job function of disciplining a student is increasingly full of legal and public risks. Real-world incidents, such as the widely-publicized case on "Raffy Tulfo in Action" and the tragic news of a teacher being shot over a failing grade, prove the very real threats to a teacher's reputation, career, and even physical safety. As someone teaching both Senior and Junior High students, this creates a feeling of "walking on eggshells," making it difficult to effectively manage a classroom. In conclusion, for the educational system to truly succeed, we need stronger laws that empower teachers to do their jobs, including discipline, without the constant fear of public criticism or legal action.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: Classroom Observation (Oct 19) - The Synthesis of Practice -->
+            <div class="artifact-card">
+                <div class="artifact-content">
+                    <h4 id="artifact-7">The Synthesis of Practice: Pragmatism, Realism, and Zen in TLE Instruction</h4>
+                    <span class="artifact-date">Date Submitted: October 19, 2025</span>
+                    
+                    <!-- NEW CONTEXT SECTION -->
+                    <p class="artifact-context">
+                        <strong>Context:</strong> As part of our course requirements, we were asked to observe classes in **FGEEL-ITL**. I chose to observe **Dr. Lorena A. Castro's TLE class** on **October 10, 2025**, as it aligned with my current teaching assignment (Grade 7 TLE classes) and offered a convenient schedule. The demonstration was conducted by two student teachers, **Sir Marl Fortaleza** and **Ms. Kwen Faelnar**.
+                    </p>
+
+                    <p>This entry documents a classroom observation of a Grade 10-TLE demonstration class focused on Pan de Coco baking and reflects on the instructor's success in seamlessly integrating three core educational philosophies: Pragmatism, Realism, and Zen Buddhism.</p>
+                    <p>Access Document: <a href="artifacts/teaching_profession/TP-2025-10-19-classroomobservationtool.pdf" target="_blank">TP-2025-10-19-classroomobservationtool.pdf</a></p>
+                    
+                    <!-- SLIDESHOW COMPONENT -->
+                    <div class="slideshow-container">
+                        <img id="slideshow-img" class="slideshow-image" alt="Classroom Observation Evidence">
+                        <div id="caption-text" class="caption-text"></div>
+                        <a class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></a>
+                        <a class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                    
+                    <div class="reflection-box">
+                        <strong>Reflection:</strong> The most profound lesson from this observation was the realization, pointed out by Dr. Diaz, that great teaching is a philosophical synthesis grounded in both the abstract and the objective. The instructor's lesson on Pan de Coco baking provided a clear example of this: the focus on skills mastery and producing a tangible product represented Pragmatism; the use of the Encantadia theme and thematic props created engagement based on intrinsic interest, reflecting Zen Buddhism; and the "what if" inquiry (e.g., adding too much flour, leaving it too long in the kugon) was an application of Realism. This was my key learning moment, as Dr. Diaz confirmed that Realism is concerned with objective, verifiable truth—the baked product's hardness or burnt state is an unchangeable, factual consequence that students verify through their senses. My initial mistake and subsequent correction taught me that effective instruction must intentionally blend non-traditional engagement, practical utility, and the factual, objective consequences of actions.
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <!-- JAVASCRIPT FOR SLIDESHOW FUNCTIONALITY -->
+    <script>
+        const imageDir = '/eportfolio/artifacts/classroom_observation/';
+        const slides = [
+            {
+                file: '2025-10-10-sirfortalezamarljason.jpg',
+                caption: 'Student-Teacher Sir Marl Jason Fortaleza conducting his demonstration teaching for Bread and Pastry Production: Ensaymada'
+            },
+            {
+                file: '2025-10-10-msfaelnarkwenjirah.jpg',
+                caption: 'Student-Teacher Sir Marl Jason Fortaleza conducting his demonstration teaching for Bread and Pastry Production: Pan de Coco'
+            },
+            {
+                file: '2025-10-10-withdrcastro.jpg',
+                caption: 'Dr. Lorena A. Castro synthesizing the lectures conducted by Sir Marl and Miss Kwen'
+            }
+        ];
+
+        let slideIndex = 0;
+
+        function showSlides(n) {
+            if (slides.length === 0) return;
+
+            // Handle cycling
+            if (n >= slides.length) { slideIndex = 0 }    
+            if (n < 0) { slideIndex = slides.length - 1 }
+
+            const currentSlide = slides[slideIndex];
+            
+            const imgElement = document.getElementById('slideshow-img');
+            const captionElement = document.getElementById('caption-text');
+            
+            // Set image source (with corrected path)
+            imgElement.src = imageDir + currentSlide.file;
+            imgElement.alt = currentSlide.caption;
+
+            // Set caption
+            captionElement.innerHTML = currentSlide.caption;
+            
+            // Fallback for image loading error
+            imgElement.onerror = function() {
+                this.src = `https://placehold.co/750x300/304D70/FFD700?text=Photo+Missing:+${currentSlide.file}`;
+                captionElement.innerHTML = currentSlide.caption + ' (Original photo file not found in directory.)';
+            }
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+        }
+
+        // Initialize the slideshow when the window loads
+        window.onload = function() {
+            showSlides(slideIndex);
+        };
+    </script>
+</body>
+</html>
