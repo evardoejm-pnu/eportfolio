@@ -17,7 +17,7 @@
             --bg-dark: #213B59; /* Deep blue background */
             --card-bg: #304D70; /* Card contrast */
             --sidebar-bg: #172A47; /* Distinct background for sidebar */
-            --text-light: #FFFFFF; /* Changed to true white for better legibility */
+            --text-light: #FFFFFF; /* True white for better legibility */
             --text-subtle: #C0C8D0; 
             --font-family: 'Inter', sans-serif;
             --font-size-base: 1.1rem;
@@ -176,7 +176,7 @@
         /* Introductory Paragraph Style */
         .artifact-content p {
             font-size: 0.95rem;
-            color: var(--text-light); /* Full white for legibility */
+            color: var(--text-light); 
             margin-bottom: 15px;
             text-align: justify; /* Justify text */
         }
@@ -229,7 +229,7 @@
         .slide-counter {
             position: absolute;
             top: 10px;
-            right: 10px; /* Moved to the upper right corner */
+            right: 10px; /* Upper right corner */
             color: var(--primary-color);
             background-color: rgba(0, 0, 0, 0.5);
             padding: 5px 10px;
@@ -256,21 +256,28 @@
             font-size: 0.9rem;
         }
 
-        /* Arrow Button Styling - Improved Visibility */
+        /* Arrow Button Styling - HIGH VISIBILITY (50x50 white square, black arrow) */
         .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
-            width: auto;
-            padding: 10px 15px; /* Added padding to make the clickable area larger */
-            margin-top: -22px;
-            color: #FFFFFF; /* Clearly visible white color */
+            width: 50px; /* Square size */
+            height: 50px; /* Square size */
+            margin-top: -25px; /* Adjust for half the height to center vertically */
+            
+            background-color: rgba(255, 255, 255, 1); /* White and opaque */
+            color: #000000; /* Black icon color */
+            
+            font-size: 24px; /* Size of the chevron icon */
             font-weight: bold;
-            font-size: 20px;
-            transition: 0.3s ease;
+            transition: background-color 0.3s, color 0.3s;
             user-select: none;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
-            border-radius: 4px;
+            display: flex; /* Use flex to perfectly center the icon */
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px; /* Slightly rounded corners */
+            border: none;
+            padding: 0; /* Remove default padding */
         }
         
         .prev {
@@ -282,7 +289,7 @@
         }
 
         .prev:hover, .next:hover {
-            background-color: rgba(255, 215, 0, 0.8); /* Gold background on hover */
+            background-color: var(--primary-color); /* Gold background on hover */
             color: #111; /* Dark text on hover */
         }
 
@@ -438,13 +445,14 @@
                         <div id="slide-counter" class="slide-counter"></div>
                         <img id="slideshow-img" class="slideshow-image" alt="Classroom Observation Evidence">
                         <div id="caption-text" class="caption-text"></div>
+                        <!-- High Visibility Arrow Buttons -->
                         <a class="prev" onclick="plusSlides(-1)"><i class="fas fa-chevron-left"></i></a>
                         <a class="next" onclick="plusSlides(1)"><i class="fas fa-chevron-right"></i></a>
                     </div>
                     
                     <div class="reflection-box">
                         <b>Reflection:</b>
-                        <p>The most profound lesson from this observation was the realization, pointed out by Dr. Diaz, that great teaching is a philosophical synthesis grounded in both the abstract and the objective. The instructor's lesson on Pan de Coco baking provided a clear example of this: the focus on skills mastery and producing a tangible product represented Pragmatism; the use of the Encantadia theme and thematic props created engagement based on intrinsic interest, reflecting Zen Buddhism; and the "what if" inquiry (e.g., adding too much flour, leaving it too long in the kugon) was an application of Realism. This was my key learning moment, as Dr. Diaz confirmed that Realism is concerned with objective, verifiable truth—the baked product's hardness or burnt state is an unchangeable, factual consequence that students verify through their senses. My initial mistake and subsequent correction taught me that effective instruction must intentionally blend non-traditional engagement, practical utility, and the factual, objective consequences of actions.</p>
+                        <p>The most profound lesson from this observation was the realization, pointed out by Dr. Diaz, that great teaching is a philosophical synthesis grounded in both the abstract and the objective. The instructor's lesson on Pan de Coco baking provided a clear example of this: the focus on skills mastery and producing a tangible product represented Pragmatism; the use of the Encantadia theme and thematic props created engagement based on intrinsic interest, reflecting Zen Buddhism; and the "what if" inquiry (e.g., adding too much flour, leaving it too long in the kugon) was an an application of Realism. This was my key learning moment, as Dr. Diaz confirmed that Realism is concerned with objective, verifiable truth—the baked product's hardness or burnt state is an unchangeable, factual consequence that students verify through their senses. My initial mistake and subsequent correction taught me that effective instruction must intentionally blend non-traditional engagement, practical utility, and the factual, objective consequences of actions.</p>
                     </div>
                 </div>
             </div>
