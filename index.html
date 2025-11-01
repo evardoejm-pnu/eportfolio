@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PBCTP Journey</title>
+    <title>My PBCTP Journey - Home</title>
 
     <!-- Font Awesome for the button icon (External dependency for icons only) --><script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
@@ -16,8 +16,8 @@
             --accent-color: #4C70A0; 
 
             /* Background and Text */
-            --bg-dark: #213B59; /* UPDATED: Lighter, more visible deep blue background */
-            --card-bg: #304D70; /* UPDATED: Lighter card contrast */
+            --bg-dark: #213B59; /* Lighter, more visible deep blue background */
+            --card-bg: #304D70; /* Lighter card contrast */
             --text-light: #F0F4F8; /* Main light text for dark mode */
             --text-subtle: #C0C8D0; /* Subtle secondary text */
 
@@ -39,6 +39,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center; /* FIX: Explicitly centers children horizontally */
         }
 
         .container {
@@ -56,7 +57,7 @@
             border-bottom: 2px solid var(--primary-color); 
             padding-bottom: 10px;
             display: inline-block;
-            line-height: 1.2; /* Adjusted for better vertical alignment */
+            line-height: 1.2;
         }
         
         strong {
@@ -72,7 +73,7 @@
             flex-grow: 1;
             display: flex;
             align-items: center;
-            justify-content: center; /* Explicitly centers the card horizontally */
+            justify-content: center; /* Centers the card horizontally */
         }
 
         .intro-card {
@@ -88,13 +89,13 @@
         }
 
         .profile-photo {
-            width: 220px; /* INCREASED SIZE */
-            height: 220px; /* INCREASED SIZE */
+            width: 220px; 
+            height: 220px; 
             object-fit: cover;
             border-radius: 50%;
             /* Gold border for photo */
             border: 5px solid var(--primary-color); 
-            margin-bottom: 25px;
+            margin-bottom: 35px; /* Space above H1 */
             transition: transform 0.3s;
         }
 
@@ -169,7 +170,7 @@
     <!-- Main Content Area --><main id="main-content">
         <section class="container">
             <div class="intro-card">
-                <!-- Profile Photo Placeholder (Ensure you update the src with your actual file path) --><img 
+                <!-- Profile Photo (On top of H1) --><img 
                     src="images/profile.jpg" 
                     alt="Placeholder profile photo" 
                     class="profile-photo"
