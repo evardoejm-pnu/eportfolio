@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBCTP Subjects Overview</title>
+
+    <!-- Font Awesome for icons --><script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- INLINE CSS STYLES (Twilight Dark Mode with PNU Gold/Blue) --><style>
+        /* --- Deep Twilight Dark Mode Theme --- */
+        :root {
+            /* PNU Gold/Yellow for main accent (Primary Highlight) */
+            --primary-color: #FFD700; 
+            /* Subtle Academic Blue (Secondary Accent) */
+            --accent-color: #4C70A0; 
+
+            /* Background and Text */
+            --bg-dark: #213B59; /* Lighter, more visible deep blue background */
+            --card-bg: #304D70; /* Lighter card contrast */
+            --text-light: #F0F4F8; /* Main light text for dark mode */
+            --text-subtle: #C0C8D0; /* Subtle secondary text */
+
+            /* Typography */
+            --font-family: 'Inter', sans-serif;
+            --font-size-base: 1.1rem;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.6;
+            margin: 0;
+            padding: 50px 0;
+            font-size: var(--font-size-base);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px; /* Wider container for horizontal cards */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header and Navigation */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            color: var(--text-subtle);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Subject Card Layout (Horizontal Flexbox) */
+        .subjects-grid {
+            display: flex;
+            flex-direction: column; /* Stacks cards vertically by default */
+            gap: 30px; /* Space between cards */
+        }
+
+        .subject-card {
+            display: flex; /* Enables horizontal layout within the card */
+            align-items: center;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--accent-color); /* Subtle blue indicator */
+            text-decoration: none; /* Remove underline from anchor tag */
+            color: inherit;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+            border-left-color: var(--primary-color); /* Gold hover indicator */
+        }
+
+        /* Professor Photo */
+        .prof-photo {
+            width: 120px;
+            height: 120px;
+            min-width: 120px; /* Ensures photo doesn't shrink on mobile */
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            margin-right: 30px; /* Space between photo and text */
+        }
+
+        /* Text Content */
+        .card-content {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .card-content h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color); /* Gold Course Name */
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .card-content .code {
+            color: var(--accent-color); /* Blue Course Code */
+            font-size: 0.95rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .card-content .professor {
+            font-size: 1rem;
+            color: var(--text-subtle);
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .subject-card {
+                flex-direction: column; /* Stack photo and text vertically on small screens */
+                text-align: center;
+            }
+            .prof-photo {
+                margin: 0 auto 20px auto; /* Centers photo and adds space below it */
+            }
+            .card-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Back to Home Button -->
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Profile</a>
+
+        <!-- Page Header -->
+        <div class="header">
+            <h1>Core PBCTP Subjects</h1>
+            <p>The list below showcases the core subjects I have taken so far, which form the foundation of my teaching practice and academic development at PNU. Click any subject to view my portfolio artifacts, reflections, and documents for that course.</p>
+        </div>
+
+        <!-- Subjects Grid -->
+        <div class="subjects-grid">
+
+            <!-- Card 1: Teaching Profession -->
+            <a href="teaching_profession.html" class="subject-card">
+                <img 
+                    src="images/diaz.jpg" 
+                    alt="Photo of Dr. Rosemarievic V. Diaz" 
+                    class="prof-photo"
+                    onerror="this.onerror=null; this.src='https://placehold.co/120x120/304D70/FFD700?text=Prof+Diaz';"
+                >
+                <div class="card-content">
+                    <h2>Teaching Profession</h2>
+                    <span class="code">2E-Educ-1</span>
+                    <p class="professor">Professor: Dr. Rosemarievic V. Diaz</p>
+                </div>
+            </a>
+
+            <!-- Card 2: Child and Adolescent Learners -->
+            <a href="child_adolescent.html" class="subject-card">
+                <img 
+                    src="images/cidro.jpg" 
+                    alt="Photo of Dr. Mark Gleen O. Cidro" 
+                    class="prof-photo"
+                    onerror="this.onerror=null; this.src='https://placehold.co/120x120/304D70/FFD700?text=Prof+Cidro';"
+                >
+                <div class="card-content">
+                    <h2>The Child and Adolescent Learners and Learning Principles</h2>
+                    <span class="code">2E-Educ-2</span>
+                    <p class="professor">Professor: Dr. Mark Gleen O. Cidro</p>
+                </div>
+            </a>
+
+            <!-- Card 3: Principles and Methods of Teaching -->
+            <a href="principles_methods.html" class="subject-card">
+                <img 
+                    src="images/mangao.jpg" 
+                    alt="Photo of Dr. Dominador D. Mangao" 
+                    class="prof-photo"
+                    onerror="this.onerror=null; this.src='https://placehold.co/120x120/304D70/FFD700?text=Prof+Mangao';"
+                >
+                <div class="card-content">
+                    <h2>Principles and Methods of Teaching</h2>
+                    <span class="code">2E-Educ-3</span>
+                    <p class="professor">Professor: Dr. Dominador D. Mangao</p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
