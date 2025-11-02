@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Readings & Lecture Handouts - CALLP</title>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- Deep Twilight Dark Mode Theme Variables --- */
+        :root {
+            /* PNU Gold/Yellow for main accent (Primary Highlight) */
+            --primary-color: #FFD700;
+            /* Subtle Academic Blue (Secondary Accent) */
+            --accent-color: #4C70A0;
+
+            /* Background and Text */
+            --bg-dark: #213B59; /* Lighter, more visible deep blue background */
+            --card-bg: #304D70; /* Lighter card contrast */
+            --text-light: #F0F4F8; /* Main light text for dark mode */
+            --text-subtle: #C0C8D0; /* Subtle secondary text (Grey) */
+            --text-hover: #19314A; /* Very dark blue for contrast on yellow */
+            --reflection-text: #F0F4F8; /* White text for reflection */
+
+            /* Typography */
+            --font-family: 'Inter', sans-serif;
+            --font-size-base: 1.1rem;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 50px 0;
+            font-size: var(--font-size-base);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: var(--text-subtle);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Back Button (Retained from options.html) */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* --- Custom Styles for Readings/Handouts List --- */
+
+        .section-heading {
+            color: var(--text-light);
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--text-subtle);
+        }
+
+        .section-intro {
+            color: var(--text-subtle); /* Introductory paragraph set to gray */
+            margin-bottom: 30px;
+            font-size: 1rem;
+            text-align: justify; /* Justification for the intro paragraph */
+        }
+        
+        /* Main List Container */
+        .readings-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Accordion Entry (Using <details>) */
+        .entry-details {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--accent-color);
+            transition: border-color 0.3s;
+        }
+
+        /* Entry Title (Using <summary>) */
+        .entry-summary {
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding: 20px;
+            cursor: pointer;
+            outline: none;
+            color: var(--text-light);
+            transition: color 0.3s, background-color 0.3s;
+            list-style: none; /* Removes the default arrow/marker */
+            display: flex;
+            align-items: center;
+        }
+
+        /* Custom marker styling */
+        .entry-summary::before {
+            content: "\25b6"; /* Right-pointing triangle */
+            margin-right: 15px;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        /* When open, rotate marker */
+        .entry-details[open] > .entry-summary::before {
+            content: "\25be"; /* Down-pointing triangle */
+            transform: rotate(0deg);
+        }
+
+        /* Hover effect for entire entry title */
+        .entry-summary:hover {
+            background-color: var(--primary-color); /* Yellow background fill */
+            color: var(--text-hover); /* Dark text on hover */
+        }
+        
+        .entry-summary:hover::before {
+             color: var(--text-hover); /* Dark marker on hover */
+        }
+
+
+        /* Dropdown Content Area */
+        .entry-content {
+            padding: 20px;
+            padding-top: 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            color: var(--text-subtle);
+        }
+        
+        /* Justified text for all content */
+        .entry-content, .section-intro {
+            text-align: justify;
+        }
+        
+        /* Layout for Summary and Button (using CSS Grid for vertical stretch) */
+        .summary-and-button {
+            display: grid;
+            grid-template-columns: 200px 1fr; /* Fixed width for button, rest for summary */
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .summary-box {
+            /* Takes 2nd column */
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2); 
+            border-radius: 4px;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 1rem;
+            /* Ensures button is aligned with its content */
+            align-self: flex-start; 
+        }
+
+        .view-btn {
+            /* Takes 1st column */
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0 20px; /* Vertical padding removed for full stretch */
+            border-radius: 6px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            
+            /* Full vertical stretch and content centering */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.3;
+            height: 100%; /* Important for grid item stretch */
+            min-height: 50px; /* Minimum height to look like a button */
+        }
+
+        .view-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .reflection-box h3 {
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .reflection-box p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--reflection-text); /* Reflection text set to white */
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 800px) {
+            .summary-and-button {
+                grid-template-columns: 1fr; /* Single column layout on small screens */
+            }
+            .view-btn {
+                height: auto;
+                padding: 15px 20px;
+                min-height: auto;
+            }
+            .summary-box {
+                font-style: normal;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="callp_options.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio Options</a>
+
+        <div class="header">
+            <h1>Course Readings and Lecture Handouts</h1>
+            <p><b>2E-Educ-2</b> | Dr. Mark Gleen O. Cidro</p>
+            <p style="margin-top: 15px;">A curated list of essential reference materials, including supplemental readings from external authors and core lecture handouts created by Dr. Cidro, used throughout the course "The Child and Adolescent Learners and Learning Principles."</p>
+        </div>
+
+        <h2 class="section-heading">Course Readings</h2>
+        <p class="section-intro">
+            These published materials are essential, evidence-based articles and book chapters that provide the theoretical foundation for the lectures. You were expected to read and reflect on these prior to or during the corresponding class discussion.
+        </p>
+
+        <ul class="readings-list">
+            
+            <details class="entry-details reading-entry">
+                <summary class="entry-summary">Course Reading 1: The Young Adolescent Learner (Fran Salyers and Carol McKee)</summary>
+                <div class="entry-content">
+                    
+                    <div class="summary-and-button">
+                        <a href="/eportfolio/Educ 2 - Child and Adolescent Learners and Learning Principles/artifacts/CALLP-Reading-01-youngadolescentlearner.pdf" class="view-btn" target="_blank">View Document</a>
+                        <p class="summary-box">
+                            This reading details the distinctive physical, intellectual, social, and emotional characteristics of the 10-15 year old young adolescent learner, emphasizing their need for an educational program specifically designed to address their rapid and complex developmental stage.
+                        </p>
+                    </div>
+
+                    <div class="reflection-box">
+                        <h3>Reflection</h3>
+                        <p>
+                            This reading was totally relatable! It explains why middle school is such chaos—you can have an 11-year-old and a 14-year-old in the same room who are worlds apart developmentally. The part about their physical energy making it "uncomfortable" to sit still finally validates why I need to build in movement breaks. It makes lesson planning less about "entertaining them" and more about just respecting how their brains and bodies are actually built right now.
+                        </p>
+                    </div>
+                </div>
+            </details>
+
+            <details class="entry-details reading-entry">
+                <summary class="entry-summary">Course Reading 2: The Importance of Concept of Growth and Development for Educators of All Levels (Dr. Jayaram Kanakala)</summary>
+                <div class="entry-content">
+                    
+                    <div class="summary-and-button">
+                        <a href="/eportfolio/Educ 2 - Child and Adolescent Learners and Learning Principles/artifacts/CALLP-Reading-02-kanakala2023.pdf" class="view-btn" target="_blank">View Document</a>
+                        <p class="summary-box">
+                            Understanding the principles and patterns of human development—distinguishing quantitative <b>growth</b> from qualitative <b>development</b>—is crucial for educators to make appropriate choices, manage student behavior, provide tailored guidance, and identify problems in a student's social, cognitive, and emotional well-being.
+                        </p>
+                    </div>
+
+                    <div class="reflection-box">
+                        <h3>Reflection</h3>
+                        <p>
+                            I used to think <b>growth</b> and <b>development</b> were the same thing, so this paper was a huge correction for me—one is just getting bigger (growth), the other is getting <i>better</i> at skills (development). The concept of the <b>spiral pattern</b> really stuck with me. It’s comforting to know that learning isn't a straight line; students circle back and deepen their understanding over time. It gives me a clear blueprint for lesson sequencing, like knowing students need to hear and speak the language before they can really tackle reading and writing it.
+                        </p>
+                    </div>
+                </div>
+            </details>
+
+            <details class="entry-details reading-entry">
+                <summary class="entry-summary">Course Reading 3: The Science of Learning (Deans for Impact)</summary>
+                <div class="entry-content">
+                    
+                    <div class="summary-and-button">
+                        <a href="/eportfolio/Educ 2 - Child and Adolescent Learners and Learning Principles/artifacts/CALLP-Reading-02-scienceoflearning.pdf" class="view-btn" target="_blank">View Document</a>
+                        <p class="summary-box">
+                            This document summarizes six core cognitive science principles—focusing on memory, attention, prior knowledge, and practice—to guide educators in developing evidence-based classroom strategies that align with how the human brain naturally processes and retains information.
+                        </p>
+                    </div>
+
+                    <div class="reflection-box">
+                        <h3>Reflection</h3>
+                        <p>
+                            This one felt like finally getting the <i>actual</i> owner's manual for the student brain. It blew up all those silly myths like the "learning styles" thing. The biggest takeaway for me is that smart studying isn't about cramming or highlighting; it’s about <b>retrieval practice</b> (quizzing yourself) and <b>spacing</b> out reviews. I’m definitely using these six principles to check my lesson plans, especially to make sure I’m not throwing too much at students at once and totally frying their <b>working memory</b>.
+                        </p>
+                    </div>
+                </div>
+            </details>
+        </ul>
+
+
+        <h2 class="section-heading">Lecture Handouts</h2>
+        <p class="section-intro">
+            These are core lecture notes and structured overviews created by Dr. Cidro to summarize essential concepts. These documents serve as the primary reference for the theoretical frameworks covered in the lessons.
+        </p>
+
+        <ul class="readings-list">
+            
+            <details class="entry-details reading-entry">
+                <summary class="entry-summary">Course Handout 1: Human Growth and Development</summary>
+                <div class="entry-content">
+                    
+                    <div class="summary-and-button">
+                        <a href="/eportfolio/Educ 2 - Child and Adolescent Learners and Learning Principles/artifacts/CALLP-Handouts-01-growthdevelopment.pdf" class="view-btn" target="_blank">View Document</a>
+                        <p class="summary-box">
+                            This handout comprehensively outlines the <b>concepts and principles</b> of development—which is lifelong, multidimensional, and plastic—and summarizes major theories and stages across the lifespan in <b>cognitive, language, socio-emotional, and moral domains</b> from theorists like Piaget, Vygotsky, Erikson, and Kohlberg.
+                        </p>
+                    </div>
+
+                    <div class="reflection-box">
+                        <h3>Reflection</h3>
+                        <p>
+                            This handout is a life-saver—it's basically a master cheat sheet for all the big theories we've been reading about! <b>Erikson's Psychosocial Stages</b> resonated the most with me because it reframes student behavior: they're not just acting out, they're navigating an emotional crisis (like <i>Identity vs. Role Confusion</i>). Keeping this chart handy will be super helpful for quickly figuring out a student's developmental stage so I can address the root cause of their behavior, not just the symptom.
+                        </p>
+                    </div>
+                </div>
+            </details>
+
+            <details class="entry-details reading-entry">
+                <summary class="entry-summary">Course Handout 2: Nature, Concepts, and Perspectives of Learning</summary>
+                <div class="entry-content">
+                    
+                    <div class="summary-and-button">
+                        <a href="/eportfolio/Educ 2 - Child and Adolescent Learners and Learning Principles/artifacts/CALLP-Handouts-02-natureconceptperspectiveslearning.pdf" class="view-btn" target="_blank">View Document</a>
+                        <p class="summary-box">
+                            This handout details seven major learning perspectives—including <b>Behaviorist, Cognitivist, Constructivist, Phenomenology, and Andragogy</b>—by defining their nature, key concepts (like reinforcement, schema, ZPD), foundational theorists, and practical applications in education, all to provide a comprehensive understanding of diverse approaches to teaching and learning.
+                        </p>
+                    </div>
+
+                    <div class="reflection-box">
+                        <h3>Reflection</h3>
+                        <p>
+                            This handout is gold for untangling all the different ways we talk about learning. The biggest lightbulb moment was reading about <b>Phenomenology</b>—the idea that it's not just about what I teach, but what the student <i>subjectively takes away</i> from it. It's a great reminder that I can't just stick to one approach. To be a versatile teacher, I need to know when to switch from a <b>Behaviorist</b> technique for managing the class to a <b>Constructivist</b> one for deeper, collaborative learning.
+                        </p>
+                    </div>
+                </div>
+            </details>
+        </ul>
+
+    </div>
+
+    <script>
+        // Get all details elements that act as reading entries
+        const entries = document.querySelectorAll('.reading-entry');
+
+        entries.forEach(entry => {
+            // Add a 'toggle' event listener to each details element
+            entry.addEventListener('toggle', () => {
+                // Check if the current entry is being opened
+                if (entry.open) {
+                    // Loop through all other entries
+                    entries.forEach(otherEntry => {
+                        // If another entry is open and is not the current entry, close it
+                        if (otherEntry !== entry && otherEntry.open) {
+                            otherEntry.open = false;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
