@@ -165,7 +165,7 @@
             border-left: 5px solid var(--primary-color); 
             margin-top: 5px; 
             padding-top: 30px; 
-            /* REQUESTED CHANGE: Increased spacing between cards to 2cm */
+            /* Requested: 2cm spacing between cards */
             margin-bottom: 2cm; 
         }
         
@@ -189,7 +189,8 @@
             display: flex;
             gap: 20px;
             margin-bottom: 20px;
-            align-items: flex-start;
+            /* CHANGE 1: Stretch items to match the height of the tallest content */
+            align-items: stretch; 
         }
 
         /* Image container: Fixed basis for two-column structure */
@@ -200,12 +201,15 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             background-color: #172A47; 
+            /* CHANGE 1: Ensure image container fills the height of the row */
+            height: 100%; 
         }
 
         .artifact-image-container img {
-            width: 100%; /* Spans full width of the 200px container */
-            height: auto;
-            aspect-ratio: 1 / 1; /* Ensures it is a square, as requested */
+            width: 100%; 
+            /* CHANGE 1: Ensure image itself fills the height of the container */
+            height: 100%;
+            /* Removed aspect-ratio: 1 / 1; to allow stretching */
             display: block;
             border-radius: 8px;
             object-fit: cover;
@@ -215,13 +219,20 @@
         .artifact-text-links {
             flex: 1; 
             min-width: 0;
+            /* CHANGE 1: Make this a column flex container to push the access card to the bottom */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            height: 100%; 
         }
 
+        /* Make the paragraph take up available space */
         .artifact-text-links p {
             font-size: 0.95rem;
             color: var(--text-light); 
             margin-bottom: 15px;
             text-align: justify; 
+            flex-grow: 1; /* Allows paragraph to grow and push the button down */
         }
         
         /* --- DOCUMENT ACCESS CARD STYLES --- */
@@ -233,6 +244,8 @@
             transition: background-color 0.3s, border-color 0.3s;
             text-align: center;
             border: 1px solid transparent;
+            /* Ensures it sits at the bottom of the column */
+            flex-shrink: 0; 
         }
         
         .access-card:hover {
@@ -259,20 +272,24 @@
         
         /* Specific Styles for the Preferred Look */
         .access-card-title-main {
-            font-size: 1.1rem; /* Revert to a slightly larger font for the main action text */
+            font-size: 1.1rem; 
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             margin-bottom: 5px;
-            color: var(--primary-color); /* Keep primary color for main action text */
+            color: var(--primary-color); 
+            /* CHANGE 2: Tighter line height for packed text */
+            line-height: 1.2; 
         }
         
         .access-card-doc-title {
-            font-size: 0.8rem; /* Revert to smaller, gray text for the document title */
+            font-size: 0.8rem; 
             color: var(--text-subtle);
             font-weight: normal;
+            /* CHANGE 2: Tighter line height for packed text */
+            line-height: 1.2;
         }
         
         /* --- END DOCUMENT ACCESS CARD STYLES --- */
@@ -470,16 +487,19 @@
             /* Stack image and text vertically on mobile */
             .artifact-body-row {
                 flex-direction: column; 
+                align-items: flex-start; /* Revert alignment for mobile stacking */
             }
             
             .artifact-image-container {
                 flex-basis: auto; /* Remove fixed basis on mobile */
                 max-width: 100%; 
                 order: -1; /* Place image at the top */
+                height: auto; /* Allow height to be determined by content/aspect ratio */
             }
             
             .artifact-image-container img {
                 aspect-ratio: 4 / 3; /* Make it a bit rectangular on mobile for a better fit */
+                height: auto; /* Allow height to be determined by aspect ratio */
             }
             
             /* Center elements on mobile screens */
@@ -503,7 +523,7 @@
             <li><a href="#artifact-6">Vulnerable Educator</a></li>
             <li><a href="#artifact-7">Synthesis of Practice</a></li>
             
-            <!-- REQUESTED CHANGE: Nested Seminar Navigation -->
+            <!-- Nested Seminar Navigation -->
             <li>
                 <a href="#" onclick="toggleSeminars(event)" class="sidebar-toggle-link" data-target="seminar-sublist">
                     <i class="fas fa-caret-right" id="seminar-toggle-icon"></i> Term Seminars & Webinars
@@ -516,7 +536,9 @@
             
             <li class="disclaimer-nav-link"><a href="#disclaimer">Disclaimer on Visual Assets</a></li>
         </ul>
-        <a href="subjects.html" class="back-btn" style="margin: 20px 20px 0; display: block; text-align: center; background-color: var(--accent-color);">
+        
+        <!-- Back to Core Subjects Button (REVERTED TO ORIGINAL DISTINCT BUTTON LOOK) -->
+        <a href="subjects.html" class="back-btn" style="margin: 20px 20px 0; display: block; text-align: center; background-color: var(--accent-color); padding: 10px; border-radius: 6px; color: var(--text-light); text-decoration: none; font-weight: bold; transition: background-color 0.2s;">
             <i class="fas fa-arrow-left"></i> Back to Core Subjects
         </a>
     </nav>
@@ -559,7 +581,7 @@
                                 <div class="access-card-title-main">
                                     <i class="fas fa-file-pdf"></i> View Submitted Document
                                 </div>
-                                <!-- Reverted: Gray text with smaller font size for title entry -->
+                                <!-- Change 2: Packed text formatting via CSS line-height change -->
                                 <span class="access-card-doc-title">Reflecting on the Evolution and Practicality of Philippine Education</span>
                             </a>
                         </div>
@@ -715,7 +737,7 @@
                     <!-- Short Term Goal -->
                     <div class="goal-block">
                         <span class="goal-label highlight-strong">Short-Term Goal:</span>
-                        <p class="goal-text">I will run a <span class="highlight-strong">"Knowledge Valuing" activity</span> in my current class. This activity will explicitly ask students to share and be rewarded for non-academic knowledge (like cultural or livelihood skills), treating it with the same respect as textbook content.</p>
+                        <p class="goal-text">I will run a <span class="highlight-strong">"Knowledge Valuing" activity</span> in my current class. This will explicitly ask students to share and be rewarded for non-academic knowledge (like cultural or livelihood skills), treating it with the same respect as textbook content.</p>
                     </div>
 
                     <!-- Long Term Goal -->
