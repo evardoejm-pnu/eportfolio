@@ -126,6 +126,43 @@
             background-color: #704040 !important; /* Slightly lighter hover */
         }
 
+        /* --- BACK TO CORE SUBJECTS BUTTON FIX --- */
+        
+        /* Common style for both sidebar and main page buttons */
+        .back-btn-common {
+            display: block;
+            text-align: center;
+            /* DEFAULT STATE: Blend with background, White Text */
+            background-color: transparent; 
+            padding: 10px;
+            border-radius: 6px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            border: 1px solid transparent; /* Added a transparent border for cleaner hover */
+        }
+
+        /* HOVER STATE: Lighter Blue background, Yellow Text */
+        .back-btn-common:hover {
+            background-color: var(--accent-color); /* #4C70A0 - A lighter hue of blue */
+            color: var(--primary-color); /* Yellow Text */
+            border-color: var(--primary-color); /* Optional: Gold border on hover */
+        }
+        
+        /* Specific margin/placement for sidebar button */
+        .sidebar .back-btn-common {
+            margin: 20px 20px 0;
+            width: auto; /* Allow natural block width */
+        }
+        
+        /* Specific margin/placement for main container button (mobile/top) */
+        .container .back-btn-common {
+            width: fit-content; /* Only as wide as the text */
+            margin: 0 0 30px 0; /* Add margin to separate from header */
+        }
+        /* --- END BACK TO CORE SUBJECTS BUTTON FIX --- */
+
         /* --- MAIN CONTENT STYLES --- */
         .container {
             max-width: 750px; 
@@ -537,8 +574,8 @@
             <li class="disclaimer-nav-link"><a href="#disclaimer">Disclaimer on Visual Assets</a></li>
         </ul>
         
-        <!-- Back to Core Subjects Button (REVERTED TO ORIGINAL DISTINCT BUTTON LOOK) -->
-        <a href="subjects.html" class="back-btn" style="margin: 20px 20px 0; display: block; text-align: center; background-color: var(--accent-color); padding: 10px; border-radius: 6px; color: var(--text-light); text-decoration: none; font-weight: bold; transition: background-color 0.2s;">
+        <!-- Back to Core Subjects Button (APPLIED FIX HERE) -->
+        <a href="subjects.html" class="back-btn-common">
             <i class="fas fa-arrow-left"></i> Back to Core Subjects
         </a>
     </nav>
@@ -546,8 +583,8 @@
 
     <div class="container">
         
-        <!-- Back to Core Subjects Button (Visible on Mobile/Smaller Screens) -->
-        <a href="subjects.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Core Subjects</a>
+        <!-- Back to Core Subjects Button (Visible on Mobile/Smaller Screens) (APPLIED FIX HERE) -->
+        <a href="subjects.html" class="back-btn-common"><i class="fas fa-arrow-left"></i> Back to Core Subjects</a>
 
         <!-- Page Header -->
         <div class="header">
@@ -647,7 +684,7 @@
                 <!-- Reverted: Nested Reflection Card Structure and Centered Headings -->
                 <div class="reflection-box">
                     <b>Reflection:</b>
-                    <p class="main-reflection-text">The biggest takeaway was confirming that my role is to equip students with a <span class="highlight-strong">toolkit</span> to solve problems, not just facts to memorize. I grew by committing to convert theoretical <span class="highlight-strong">'what-ifs'</span> into practical <span class="highlight-etosong">'how-tos'</span>. This means I always have to make sure my students understand the <span class="highlight-strong">why</span> behind the lesson, not just the <span class="highlight-strong">what</span>.</p>
+                    <p class="main-reflection-text">The biggest takeaway was confirming that my role is to equip students with a <span class="highlight-strong">toolkit</span> to solve problems, not just facts to memorize. I grew by committing to convert theoretical <span class="highlight-strong">'what-ifs'</span> into practical <span class="highlight-strong">'how-tos'</span>. This means I always have to make sure my students understand the <span class="highlight-strong">why</span> behind the lesson, not just the <span class="highlight-strong">what</span>.</p>
                     
                     <!-- Short Term Goal -->
                     <div class="goal-block">
