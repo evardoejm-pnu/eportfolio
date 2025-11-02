@@ -184,13 +184,12 @@
             font-weight: bold;
         }
         
-        /* --- ARTIFACT BODY ROW (IMAGE + TEXT/LINKS) --- */
+        /* --- ARTIFACT BODY ROW (IMAGE + TEXT) --- */
         .artifact-body-row {
             display: flex;
             gap: 20px;
-            margin-bottom: 20px;
-            /* CHANGE 1: Stretch items to match the height of the tallest content */
-            align-items: stretch; 
+            margin-bottom: 20px; /* Space above the new full-width access card */
+            align-items: flex-start; 
         }
 
         /* Image container: Fixed basis for two-column structure */
@@ -201,15 +200,13 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             background-color: #172A47; 
-            /* CHANGE 1: Ensure image container fills the height of the row */
             height: 100%; 
+            align-self: stretch; /* Stretches to fill the height defined by its sibling */
         }
 
         .artifact-image-container img {
             width: 100%; 
-            /* CHANGE 1: Ensure image itself fills the height of the container */
             height: 100%;
-            /* Removed aspect-ratio: 1 / 1; to allow stretching */
             display: block;
             border-radius: 8px;
             object-fit: cover;
@@ -219,10 +216,10 @@
         .artifact-text-links {
             flex: 1; 
             min-width: 0;
-            /* CHANGE 1: Make this a column flex container to push the access card to the bottom */
+            /* Use column flex for layout, but the access card is no longer inside it */
             display: flex;
             flex-direction: column;
-            justify-content: space-between; 
+            justify-content: flex-start; /* Aligned content to the top */
             height: 100%; 
         }
 
@@ -232,20 +229,25 @@
             color: var(--text-light); 
             margin-bottom: 15px;
             text-align: justify; 
-            flex-grow: 1; /* Allows paragraph to grow and push the button down */
+            flex-grow: 1; 
+            margin-top: 0 !important; 
         }
         
         /* --- DOCUMENT ACCESS CARD STYLES --- */
+        
+        /* New wrapper for full-width placement (no specific styles needed other than structure) */
+        .access-card-full-width-wrapper {
+            margin-bottom: 25px; /* Space between the access card and the reflection box */
+        }
+
         .access-card {
-            margin-top: 15px;
             padding: 15px;
             background-color: var(--link-bg); 
             border-radius: 6px;
             transition: background-color 0.3s, border-color 0.3s;
             text-align: center;
             border: 1px solid transparent;
-            /* Ensures it sits at the bottom of the column */
-            flex-shrink: 0; 
+            /* The card is now naturally full width of the parent artifact card */
         }
         
         .access-card:hover {
@@ -278,25 +280,23 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            line-height: 1.0; 
             margin-bottom: 5px;
             color: var(--primary-color); 
-            /* CHANGE 2: Tighter line height for packed text */
-            line-height: 1.2; 
         }
         
         .access-card-doc-title {
             font-size: 0.8rem; 
             color: var(--text-subtle);
             font-weight: normal;
-            /* CHANGE 2: Tighter line height for packed text */
-            line-height: 1.2;
+            line-height: 1.0;
         }
         
         /* --- END DOCUMENT ACCESS CARD STYLES --- */
         
         /* --- REFLECTION BOX STYLES (NESTED CARD) --- */
         .reflection-box {
-            margin-top: 20px;
+            /* Removed margin-top, as the access card now provides the vertical space */
             padding: 20px;
             background-color: #274563; /* Darker blue shade for contrast */
             border-radius: 8px;
@@ -573,20 +573,24 @@
                     
                     <!-- Text and Links Container -->
                     <div class="artifact-text-links">
-                        <p>This <span class="highlight-strong">worksheet activity</span> marked the first time I deeply examined the history of Philippine education, specifically looking at four key periods, such as the Pre-Philippine era and the Japanese Occupation. I've included this entry because analyzing their contributions provided the essential context for understanding the structure and evolution of our modern educational system.</p>
+                        <p style="margin-top: 0 !important;">This <span class="highlight-strong">worksheet activity</span> marked the first time I deeply examined the history of Philippine education, specifically looking at four key periods, such as the Pre-Philippine era and the Japanese Occupation. I've included this entry because analyzing their contributions provided the essential context for understanding the structure and evolution of our modern educational system.</p>
                         
-                        <!-- Access Card: Reverted to the desired font/color format -->
-                        <div class="access-card">
-                            <a href="artifacts/teaching_profession/TP-2025-09-14-worksheeteducperiod.pdf" target="_blank">
-                                <div class="access-card-title-main">
-                                    <i class="fas fa-file-pdf"></i> View Submitted Document
-                                </div>
-                                <!-- Change 2: Packed text formatting via CSS line-height change -->
-                                <span class="access-card-doc-title">Reflecting on the Evolution and Practicality of Philippine Education</span>
-                            </a>
-                        </div>
+                        <!-- REMOVED ACCESS CARD FROM HERE -->
                     </div>
                 </div>
+                
+                <!-- NEW: FULL-WIDTH ACCESS CARD LOCATION -->
+                <div class="access-card-full-width-wrapper">
+                    <div class="access-card">
+                        <a href="artifacts/teaching_profession/TP-2025-09-14-worksheeteducperiod.pdf" target="_blank">
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">Reflecting on the Evolution and Practicality of Philippine Education</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW LOCATION -->
                 
                 <!-- Reverted: Nested Reflection Card Structure and Centered Headings -->
                 <div class="reflection-box">
@@ -621,29 +625,34 @@
                     
                     <!-- Text and Links Container -->
                     <div class="artifact-text-links">
-                        <p>I selected this <span class="highlight-strong">foundational document</span> for my portfolio because writing it led to the core realization of my teaching role: the educator must act as a <span class="highlight-strong">translator</span>. My philosophy crystallized around the idea of taking complex, technical knowledge and deliberately simplifying it so it becomes relevant, usable, and accessible to every student.</p>
+                        <p style="margin-top: 0 !important;">I selected this <span class="highlight-strong">foundational document</span> for my portfolio because writing it led to the core realization of my teaching role: the educator must act as a <span class="highlight-strong">translator</span>. My philosophy crystallized around the idea of taking complex, technical knowledge and deliberately simplifying it so it becomes relevant, usable, and accessible to every student.</p>
                         
-                        <!-- Access Card: Reverted to the desired font/color format -->
-                        <div class="access-card">
-                            <a href="artifacts/teaching_profession/TP-2025-09-18-ownteachingphilosophy.pdf" target="_blank">
-                                <div class="access-card-title-main">
-                                    <i class="fas fa-file-pdf"></i> View Submitted Document
-                                </div>
-                                <span class="access-card-doc-title">The Educator as Translator: My Philosophy on Demystifying Knowledge</span>
-                            </a>
-                        </div>
+                        <!-- REMOVED ACCESS CARD FROM HERE -->
                     </div>
                 </div>
+                
+                <!-- NEW: FULL-WIDTH ACCESS CARD LOCATION -->
+                <div class="access-card-full-width-wrapper">
+                    <div class="access-card">
+                        <a href="artifacts/teaching_profession/TP-2025-09-18-ownteachingphilosophy.pdf" target="_blank">
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Educator as Translator: My Philosophy on Demystifying Knowledge</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW LOCATION -->
 
                 <!-- Reverted: Nested Reflection Card Structure and Centered Headings -->
                 <div class="reflection-box">
                     <b>Reflection:</b>
-                    <p class="main-reflection-text">The biggest takeaway was confirming that my role is to equip students with a <span class="highlight-strong">toolkit</span> to solve problems, not just facts to memorize. I grew by committing to convert theoretical <span class="highlight-strong">'what-ifs'</span> into practical <span class="highlight-strong">'how-tos'</span>. This means I always have to make sure my students understand the <span class="highlight-strong">why</span> behind the lesson, not just the <span class="highlight-strong">what</span>.</p>
+                    <p class="main-reflection-text">The biggest takeaway was confirming that my role is to equip students with a <span class="highlight-strong">toolkit</span> to solve problems, not just facts to memorize. I grew by committing to convert theoretical <span class="highlight-strong">'what-ifs'</span> into practical <span class="highlight-etosong">'how-tos'</span>. This means I always have to make sure my students understand the <span class="highlight-strong">why</span> behind the lesson, not just the <span class="highlight-strong">what</span>.</p>
                     
                     <!-- Short Term Goal -->
                     <div class="goal-block">
                         <span class="goal-label highlight-strong">Short-Term Goal:</span>
-                        <p class="goal-text">In my next two teaching sessions, I'll use the <span class="highlight-strong">Feynman Technique</span> (where students teach the material back to me) to check if I'm really simplifying complex concepts effectively. I need to make sure I'm being a good translator!</p>
+                        <p class="goal-text">I'll use the <span class="highlight-strong">Feynman Technique</span> (where students teach the material back to me) to check if I'm really simplifying complex concepts effectively. I need to make sure I'm being a good translator!</p>
                     </div>
 
                     <!-- Long Term Goal -->
@@ -668,19 +677,24 @@
                     
                     <!-- Text and Links Container -->
                     <div class="artifact-text-links">
-                        <p>Understanding the legal and ethical framework is a <span class="highlight-strong">non-negotiable part of the profession</span>, which is why I've included this <span class="highlight-strong">case analysis</span>. It required me to examine real-life disciplinary problems, identify specific violations of law by both staff and institutions, and propose proactive measures to ensure due process and protection for all stakeholders.</p>
+                        <p style="margin-top: 0 !important;">Understanding the legal and ethical framework is a <span class="highlight-strong">non-negotiable part of the profession</span>, which is why I've included this <span class="highlight-strong">case analysis</span>. It required me to examine real-life disciplinary problems, identify specific violations of law by both staff and institutions, and propose proactive measures to ensure due process and protection for all stakeholders.</p>
                         
-                        <!-- Access Card: Reverted to the desired font/color format -->
-                        <div class="access-card">
-                            <a href="artifacts/teaching_profession/TP-2025-09-20-caseanalysisviolations.pdf" target="_blank">
-                                <div class="access-card-title-main">
-                                    <i class="fas fa-file-pdf"></i> View Submitted Document
-                                </div>
-                                <span class="access-card-doc-title">Upholding Due Process: Legal and Proactive Measures in School Safety</span>
-                            </a>
-                        </div>
+                        <!-- REMOVED ACCESS CARD FROM HERE -->
                     </div>
                 </div>
+                
+                <!-- NEW: FULL-WIDTH ACCESS CARD LOCATION -->
+                <div class="access-card-full-width-wrapper">
+                    <div class="access-card">
+                        <a href="artifacts/teaching_profession/TP-2025-09-20-caseanalysisviolations.pdf" target="_blank">
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">Upholding Due Process: Legal and Proactive Measures in School Safety</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW LOCATION -->
                 
                 <!-- Reverted: Nested Reflection Card Structure and Centered Headings -->
                 <div class="reflection-box">
@@ -715,19 +729,24 @@
                     
                     <!-- Text and Links Container -->
                     <div class="artifact-text-links">
-                        <p>This <span class="highlight-strong">deep reflection</span> fundamentally changed my view on the purpose of education, making it a critical entry here. I recognized that education has historically reinforced <span class="highlight-strong">social stratification</span>, widening societal gaps. My professional commitment, informed by this realization, is to actively leverage teaching as a tool for <span class="highlight-strong">empowerment</span> to help bridge those divides.</p>
+                        <p style="margin-top: 0 !important;">This <span class="highlight-strong">deep reflection</span> fundamentally changed my view on the purpose of education, making it a critical entry here. I recognized that education has historically reinforced <span class="highlight-strong">social stratification</span>, widening societal gaps. My professional commitment, informed by this realization, is to actively leverage teaching as a tool for <span class="highlight-strong">empowerment</span> to help bridge those divides.</p>
                         
-                        <!-- Access Card: Reverted to the desired font/color format -->
-                        <div class="access-card">
-                            <a href="artifacts/teaching_profession/TP-2025-09-20-reflecteducperiods.pdf" target="_blank">
-                                <div class="access-card-title-main">
-                                    <i class="fas fa-file-pdf"></i> View Submitted Document
-                                </div>
-                                <span class="access-card-doc-title">From Stratification to Empowerment: Re-Shaping My Teaching Philosophy</span>
-                            </a>
-                        </div>
+                        <!-- REMOVED ACCESS CARD FROM HERE -->
                     </div>
                 </div>
+                
+                <!-- NEW: FULL-WIDTH ACCESS CARD LOCATION -->
+                <div class="access-card-full-width-wrapper">
+                    <div class="access-card">
+                        <a href="artifacts/teaching_profession/TP-2025-09-20-reflecteducperiods.pdf" target="_blank">
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">From Stratification to Empowerment: Re-Shaping My Teaching Philosophy</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW LOCATION -->
                 
                 <!-- Reverted: Nested Reflection Card Structure and Centered Headings -->
                 <div class="reflection-box">
@@ -762,19 +781,24 @@
                     
                     <!-- Text and Links Container -->
                     <div class="artifact-text-links">
-                        <p>This reflection on <span class="highlight-strong">Progressivism</span> is included because it addresses a critical question: why does our system, despite embracing progressive ideals, often lag behind the rapidly evolving real world? My own experience shifting careers confirmed the necessity of teaching <span class="highlight-strong">adaptive skills</span> for a continuously changing future, rather than focusing solely on static knowledge.</p>
+                        <p style="margin-top: 0 !important;">This reflection on <span class="highlight-strong">Progressivism</span> is included because it addresses a critical question: why does our system, despite embracing progressive ideals, often lag behind the rapidly evolving real world? My own experience shifting careers confirmed the necessity of teaching <span class="highlight-strong">adaptive skills</span> for a continuously changing future, rather than focusing solely on static knowledge.</p>
                         
-                        <!-- Access Card: Reverted to the desired font/color format -->
-                        <div class="access-card">
-                            <a href="artifacts/teaching_profession/TP-2025-09-20-reflectphilofoundations.pdf" target="_blank">
-                                <div class="access-card-title-main">
-                                    <i class="fas fa-file-pdf"></i> View Submitted Document
-                                </div>
-                                <span class="access-card-doc-title">The Progressive Teacher: Facilitating Lifelong Learning in a Rapidly Changing World</span>
-                            </a>
-                        </div>
+                        <!-- REMOVED ACCESS CARD FROM HERE -->
                     </div>
                 </div>
+                
+                <!-- NEW: FULL-WIDTH ACCESS CARD LOCATION -->
+                <div class="access-card-full-width-wrapper">
+                    <div class="access-card">
+                        <a href="artifacts/teaching_profession/TP-2025-09-20-reflectphilofoundations.pdf" target="_blank">
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Progressive Teacher: Facilitating Lifelong Learning in a Rapidly Changing World</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW LOCATION -->
                 
                 <!-- Reverted: Nested Reflection Card Structure and Centered Headings -->
                 <div class="reflection-box">
@@ -809,19 +833,24 @@
                     
                     <!-- Text and Links Container -->
                     <div class="artifact-text-links">
-                        <p>This <span class="highlight-strong">reflection on education laws</span> forced me to confront the <span class="highlight-strong">vulnerable side</span> of being an educator. I included it because analyzing the statutes revealed a significant gap between the disciplinary authority teachers are expected to wield and the actual legal protection and support they receive, raising my awareness of the inherent professional risks.</p>
+                        <p style="margin-top: 0 !important;">This <span class="highlight-strong">reflection on education laws</span> forced me to confront the <span class="highlight-strong">vulnerable side</span> of being an educator. I included it because analyzing the statutes revealed a significant gap between the disciplinary authority teachers are expected to wield and the actual legal protection and support they receive, raising my awareness of the inherent professional risks.</p>
                         
-                        <!-- Access Card: Reverted to the desired font/color format -->
-                        <div class="access-card">
-                            <a href="artifacts/teaching_profession/TP-2025-09-22-reflecteduclaws.pdf" target="_blank">
-                                <div class="access-card-title-main">
-                                    <i class="fas fa-file-pdf"></i> View Submitted Document
-                                </div>
-                                <span class="access-card-doc-title">The Vulnerable Educator: The Disconnect Between Teacher Authority and Legal Protection</span>
-                            </a>
-                        </div>
+                        <!-- REMOVED ACCESS CARD FROM HERE -->
                     </div>
                 </div>
+                
+                <!-- NEW: FULL-WIDTH ACCESS CARD LOCATION -->
+                <div class="access-card-full-width-wrapper">
+                    <div class="access-card">
+                        <a href="artifacts/teaching_profession/TP-2025-09-22-reflecteduclaws.pdf" target="_blank">
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Vulnerable Educator: The Disconnect Between Teacher Authority and Legal Protection</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW LOCATION -->
                 
                 <!-- Reverted: Nested Reflection Card Structure and Centered Headings -->
                 <div class="reflection-box">
@@ -857,17 +886,22 @@
 
                         <p style="text-align: justify;">This <span class="highlight-strong">classroom observation</span> became a massive <span class="highlight-strong">"Aha!" moment</span> for me, which is why I've included this entry. Watching a Grade 10 TLE class bake Pan de Coco, I realized the teacher was flawlessly synthesizing three distinct philosophical approaches: <span class="highlight-strong">Pragmatism, Realism, and Zen Buddhism</span>, providing a masterclass in practical application that profoundly changed my lesson planning approach.</p>
                         
-                        <!-- Access Card: Reverted to the desired font/color format -->
-                        <div class="access-card">
-                            <a href="artifacts/teaching_profession/TP-2025-10-19-classroomobservationtool.pdf" target="_blank">
-                                <div class="access-card-title-main">
-                                    <i class="fas fa-file-pdf"></i> View Submitted Document
-                                </div>
-                                <span class="access-card-doc-title">The Synthesis of Practice: Pragmatism, Realism, and Zen in TLE Instruction</span>
-                            </a>
-                        </div>
+                        <!-- REMOVED ACCESS CARD FROM HERE -->
                     </div>
                 </div>
+
+                <!-- NEW: FULL-WIDTH ACCESS CARD LOCATION -->
+                <div class="access-card-full-width-wrapper">
+                    <div class="access-card">
+                        <a href="artifacts/teaching_profession/TP-2025-10-19-classroomobservationtool.pdf" target="_blank">
+                            <div class="access-card-title-main">
+                                <i class="fas fa-file-pdf"></i> View Submitted Document
+                            </div>
+                            <span class="access-card-doc-title">The Synthesis of Practice: Pragmatism, Realism, and Zen in TLE Instruction</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- END NEW LOCATION -->
 
                 <!-- SLIDESHOW COMPONENT (Kept below intro text, but still within the main card) -->
                 <div class="slideshow-container">
