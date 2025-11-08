@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond the Book: The Power of Reflective Teaching</title>
     <style>
-        /* Color Palette: Dark Blue (for background/text) and Mustard Yellow (for accents/highlights) */
+        /* Color Palette: White (background), Dark Blue (text/main elements), Mustard Yellow (accents/highlights) */
         :root {
             --dark-blue: #1A237E; /* A cool, deep blue */
             --light-blue: #3949AB; /* Slightly lighter for elements */
             --mustard-yellow: #FFC107; /* Strong mustard yellow */
-            --text-color: #ECEFF1; /* Light text for readability */
-            --background-color: #121212; /* Nearly black for true dark mode feel */
+            --text-color: #212121; /* Dark text for readability on white */
+            --background-color: #FFFFFF; /* White background */
         }
 
         body {
@@ -21,11 +21,11 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            padding-bottom: 50px; /* Space for content above footer */
+            padding-bottom: 50px; 
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 800px; /* Reduced width for better text readability */
             margin: 0 auto;
             padding: 20px;
         }
@@ -57,24 +57,25 @@
         }
 
         .back-button:hover {
-            background-color: #FFEB3B; /* Slightly lighter yellow on hover */
+            background-color: #FFEB3B; 
         }
 
         /* --- Reflection Content Styling --- */
         h2 {
-            color: var(--mustard-yellow);
-            border-bottom: 2px solid var(--light-blue);
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--mustard-yellow);
             padding-bottom: 5px;
             margin-top: 40px;
             font-size: 2em;
         }
         
         strong {
-            color: var(--mustard-yellow);
+            color: var(--dark-blue);
+            font-weight: 700;
         }
 
         blockquote {
-            background-color: var(--dark-blue);
+            background-color: #F3F3F3; /* Light gray background for quote */
             border-left: 5px solid var(--mustard-yellow);
             margin: 25px 0;
             padding: 15px 20px;
@@ -86,38 +87,92 @@
             margin-bottom: 20px;
             text-align: justify;
         }
-
-        /* --- Photo Gallery Styling --- */
-        .photo-gallery {
+        
+        /* --- Photo Styling (Vertical Layout) --- */
+        .photo-section {
             margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
         }
 
         .photo-item {
-            background-color: var(--dark-blue);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-        }
-
-        .photo-item:hover {
-            transform: translateY(-5px);
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid #CCC; /* Subtle border for definition */
+            padding: 10px;
+            background-color: #FFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
 
         .photo-item img {
             width: 100%;
-            height: 250px; /* Standard height for gallery view */
-            object-fit: cover;
+            max-height: 500px; /* Max height to prevent excessively large vertical photos */
+            height: auto;
+            object-fit: contain; /* Ensures the whole image is visible */
             display: block;
+            cursor: pointer; /* Indicates the image is clickable */
+            border-radius: 3px;
+        }
+        
+        .photo-caption {
+            color: var(--light-blue);
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 0.9em;
         }
 
-        /* Specific style for the portrait program flow */
-        .photo-item img.portrait {
-            object-fit: contain; /* Contain the full image without cropping */
-            height: 350px;
+        /* --- Modal (Pop-up) Styling --- */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 50px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .modal-content, .caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)} 
+            to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -130,51 +185,83 @@
 
     <div class="container">
 
-        <h2>💡 Beyond the Book: The Power of Reflective Teaching</h2>
+        <h2><span style="color:var(--mustard-yellow);">💡</span> Beyond the Book: The Power of Reflective Teaching</h2>
         <hr style="border-color: var(--mustard-yellow);">
 
-        <p>What an insightful session we had on **October 8, 2025**, with **Dr. Eric Easton** for our webinar, **"CIVERaging on Service: Building Holistic and Learner-Centered Education through Reflective Teaching."** It was a powerful reminder that sometimes, the most effective teaching isn't about following a script—it's about stepping back and *really* thinking about our approach.</p>
+        <p>What an insightful session we had on <strong style="color:var(--dark-blue);">October 8, 2025</strong>, with <strong style="color:var(--dark-blue);">Dr. Eric Easton</strong> for our webinar, <strong style="color:var(--dark-blue);">"CIVERaging on Service: Building Holistic and Learner-Centered Education through Reflective Teaching."</strong> It was a powerful reminder that sometimes, the most effective teaching isn't about following a script—it's about stepping back and *really* thinking about our approach.</p>
 
-        <p>One story Dr. Easton shared really hit home for me. It was about a **challenging student** that his colleagues had tried *everything* on. They used every behavior technique, classroom management strategy, and by-the-book method they could find to try and get this student to engage instead of being disruptive or dismissive. They were doing everything "right," but nothing worked. Zero success.</p>
+        <p>One story Dr. Easton shared really hit home for me. It was about a <strong style="color:var(--dark-blue);">challenging student</strong> that his colleagues had tried *everything* on. They used every behavior technique, classroom management strategy, and by-the-book method they could find to try and get this student to engage instead of being disruptive or dismissive. They were doing everything "right," but nothing worked. Zero success.</p>
 
-        <p>Then, Dr. Easton decided to try something completely different. He didn't come at the student with more rules or confrontation. Instead, he **approached the problem sideways**. He looked for **creative ways** to teach and connect, finding **different opportunities** for that child to learn effectively. And guess what? He managed to turn the situation around!</p>
+        <p>Then, Dr. Easton decided to try something completely different. He didn't come at the student with more rules or confrontation. Instead, he <strong style="color:var(--dark-blue);">approached the problem sideways</strong>. He looked for <strong style="color:var(--dark-blue);">creative ways</strong> to teach and connect, finding <strong style="color:var(--dark-blue);">different opportunities</strong> for that child to learn effectively. And guess what? He managed to turn the situation around!</p>
 
-        <p>That whole experience highlights the absolute **power of reflective teaching**. It's not about tossing out everything we've learned, but it’s a big nudge to remind us:</p>
+        <p>That whole experience highlights the absolute <strong style="color:var(--dark-blue);">power of reflective teaching</strong>. It's not about tossing out everything we've learned, but it’s a big nudge to remind us:</p>
 
         <blockquote>
-            **You have to reflect on your methods, your manner, and your pedagogy.** We can't simply follow what's prescribed by "science" or the standard handbook and expect it to work for every single human being in our classroom. Teaching is a relationship, and sometimes, the solution isn't in the book—it's in the way we choose to *see* and *connect* with the learner.
+            <strong style="color:var(--dark-blue);">You have to reflect on your methods, your manner, and your pedagogy.</strong> We can't simply follow what's prescribed by "science" or the standard handbook and expect it to work for every single human being in our classroom. Teaching is a relationship, and sometimes, the solution isn't in the book—it's in the way we choose to *see* and *connect* with the learner.
         </blockquote>
 
         <p>It's a call to be more flexible, more human, and to trust our own informed judgment when the textbook approach fails.</p>
 
-        <h2>📸 Visuals from the Webinar</h2>
-        <hr style="border-color: var(--light-blue);">
+        <div class="photo-section">
+            <h2><span style="color:var(--mustard-yellow);">📸</span> Visuals from the Webinar</h2>
+            <hr style="border-color: var(--mustard-yellow);">
 
-        <div class="photo-gallery">
-            
             <div class="photo-item">
-                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching_program.jpg" alt="Webinar Program Flow" class="portrait">
+                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching_program.jpg" alt="Webinar Program Flow" onclick="openModal('/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching_program.jpg')">
+                <div class="photo-caption">Program flow of the webinar (Portrait)</div>
             </div>
             
             <div class="photo-item">
-                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching_titlecard.jpg" alt="Webinar Public Material (Pubmat)">
+                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching_titlecard.jpg" alt="Webinar Public Material (Pubmat)" onclick="openModal('/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching_titlecard.jpg')">
+                <div class="photo-caption">Pubmat of the webinar (Landscape)</div>
             </div>
             
             <div class="photo-item">
-                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-titlecard-zoom.png" alt="Zoom Screenshot of Event Title">
+                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-titlecard-zoom.png" alt="Zoom Screenshot of Event Title" onclick="openModal('/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-titlecard-zoom.png')">
+                <div class="photo-caption">Screenshot of the Zoom shared screen with the event title (Landscape)</div>
             </div>
             
             <div class="photo-item">
-                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-entire-01.png" alt="Zoom Gallery View of Participants Page 1">
+                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-entire-01.png" alt="Zoom Gallery View of Participants Page 1" onclick="openModal('/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-entire-01.png')">
+                <div class="photo-caption">Zoom screenshot of the gallery view of participants, Page 1 (Landscape)</div>
             </div>
             
             <div class="photo-item">
-                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-entire-02.png" alt="Zoom Gallery View of Participants Page 2">
+                <img src="/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-entire-02.png" alt="Zoom Gallery View of Participants Page 2" onclick="openModal('/eportfolio/Seminars & Webinars/2025-10-08/images/reflectiveteaching-entire-02.png')">
+                <div class="photo-caption">Zoom screenshot of the gallery view of participants, Page 2 (Landscape)</div>
             </div>
             
         </div>
-
     </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("img01");
+
+        // Function to open the modal
+        function openModal(imageSrc) {
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if the user clicks anywhere outside of the image
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
