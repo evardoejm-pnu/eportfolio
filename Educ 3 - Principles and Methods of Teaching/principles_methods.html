@@ -91,7 +91,7 @@
             padding: 10px 20px;
             color: var(--text-subtle);
             text-decoration: none;
-            transition: background-color 0.2s, color 0.2s;
+            transition: background-color 0.2s, color 0.2s, border-left 0.2s; /* Added border-left transition */
             font-size: 0.95rem;
             border-left: 3px solid transparent;
         }
@@ -566,8 +566,8 @@
                     <i class="fas fa-caret-right" id="seminar-toggle-icon"></i> Term Seminars & Webinars
                 </a>
                 <ul id="seminar-sublist" class="seminar-sublist">
-                    <li><a href="#seminar-1-link">CIVER Webinar (Oct 8)</a></li>
-                    <li><a href="#seminar-2-link">CIVER In-Person (Nov 8)</a></li>
+                    <li><a href="/eportfolio/Seminars & Webinars/2025-10-08/reflectiveteaching.html">CIVER Webinar (Oct 8)</a></li>
+                    <li><a href="/eportfolio/Seminars & Webinars/2025-11-08/financialliteracy.html">CIVER In-Person (Nov 8)</a></li>
                 </ul>
             </li>
             
@@ -836,9 +836,6 @@
                 <span class="artifact-date">Date Submitted: October 18, 2025</span>
                 
                 <div class="artifact-body-row">
-                    <div class="artifact-image-container" style="background: none; box-shadow: none;">
-                        </div>
-                    
                     <div class="artifact-text-links">
                         <p class="artifact-context" style="text-align: justify;">
                             <b>Context:</b> As part of our course requirements, we were asked to observe classes in <span class="highlight-strong">FGEEL-ITL</span>. I chose to observe Dr. Lorena A. Castro's TLE class on October 10, 2025, as it aligned with my current teaching assignment (Grade 7 TLE classes) and offered a convenient schedule. The demonstration was conducted by two student teachers, Sir Marl Fortaleza and Ms. Kwen Faelnar.
@@ -945,7 +942,7 @@
         <div class="seminar-list">
             
             <div id="seminar-1-link">
-                <a href="artifacts/teaching_profession/TP-2025-10-08-webinar.pdf" target="_blank" class="seminar-button-card">
+                <a href="/eportfolio/Seminars & Webinars/2025-10-08/reflectiveteaching.html" target="_blank" class="seminar-button-card">
                     <div class="main-title">
                         <i class="fas fa-video"></i> CIVER Webinar (October 8, 2025)
                     </div>
@@ -956,7 +953,7 @@
             </div>
             
             <div id="seminar-2-link">
-                 <a href="artifacts/teaching_profession/TP-2025-11-08-seminar.pdf" target="_blank" class="seminar-button-card">
+                 <a href="/eportfolio/Seminars & Webinars/2025-11-08/financialliteracy.html" target="_blank" class="seminar-button-card">
                     <div class="main-title">
                         <i class="fas fa-user-friends"></i> CIVER In-Person Seminar (November 8, 2025)
                     </div>
@@ -999,17 +996,18 @@
         ];
 
         // Data for Entry 8 (3 TLE observation photos, from teaching_profession.html)
+        // PATH CORRECTED AS REQUESTED
         const slides8 = [
              {
-                file: '/eportfolio/artifacts/classroom_observation/2025-10-10-sirfortalezamarljason.jpg',
+                file: '/eportfolio/artifacts/classroom_observation_drcastro_2020-10-10/2025-10-10-sirfortalezamarljason.jpg',
                 caption: 'Student-Teacher Sir Marl Jason Fortaleza conducting his demonstration teaching for Bread and Pastry Production: Ensaymada'
             },
             {
-                file: '/eportfolio/artifacts/classroom_observation/2025-10-10-msfaelnarkwenjirah.jpg',
+                file: '/eportfolio/artifacts/classroom_observation_drcastro_2020-10-10/2025-10-10-msfaelnarkwenjirah.jpg',
                 caption: 'Student-Teacher Ms. Kwen Faelnar conducting her demonstration teaching for Bread and Pastry Production: Pan de Coco'
             },
             {
-                file: '/eportfolio/artifacts/classroom_observation/2025-10-10-withdrcastro.jpg',
+                file: '/eportfolio/artifacts/classroom_observation_drcastro_2020-10-10/2025-10-10-withdrcastro.jpg',
                 caption: 'Dr. Lorena A. Castro synthesizing the lectures conducted by Sir Marl and Miss Kwen'
             }
         ];
