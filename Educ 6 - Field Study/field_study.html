@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Study - Portfolio Options</title>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- Deep Twilight Dark Mode Theme Variables --- */
+        :root {
+            /* PNU Gold/Yellow for main accent (Primary Highlight) */
+            --primary-color: #FFD700; 
+            /* Subtle Academic Blue (Secondary Accent) */
+            --accent-color: #4C70A0; 
+
+            /* Background and Text */
+            --bg-dark: #213B59; /* Lighter, more visible deep blue background */
+            --card-bg: #304D70; /* Lighter card contrast */
+            --text-light: #F0F4F8; /* Main light text for dark mode */
+            --text-subtle: #C0C8D0; /* Subtle secondary text */
+
+            /* Typography */
+            --font-family: 'Inter', sans-serif;
+            --font-size-base: 1.1rem;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.6;
+            margin: 0;
+            padding: 50px 0;
+            font-size: var(--font-size-base);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            color: var(--text-subtle);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* --- Grid and Option Card Styles --- */
+
+        /* Three-Column Layout for Options */
+        .option-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Individual Option Button/Card */
+        .option-card {
+            background-color: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-light);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 4px solid var(--accent-color); /* Initial blue border */
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, color 0.3s;
+            height: 320px; /* Slightly taller for 3-card balance */
+        }
+        
+        .option-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border-color: var(--primary-color); /* Gold hover border */
+        }
+
+        /* Icon Container */
+        .option-icon {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .option-card:hover .option-icon img {
+            transform: scale(1.05);
+        }
+
+        /* Title Style */
+        .option-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--accent-color); 
+            transition: color 0.3s;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .option-card:hover .option-title {
+            color: var(--primary-color); 
+        }
+
+        /* Description Style */
+        .option-description {
+            color: var(--text-subtle);
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: 2px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1100px) {
+            .option-grid {
+                grid-template-columns: 1fr 1fr; /* 2 columns for tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .option-grid {
+                grid-template-columns: 1fr; /* 1 column for mobile */
+                gap: 25px;
+            }
+            .option-card {
+                height: auto;
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="../subjects.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Core Subjects</a>
+
+        <div class="header">
+            <h1>Field Study</h1>
+            <p><strong>2E-Educ-6</strong> | Dr. Dominador D. Mangao</p>
+            <p style="margin-top: 15px;">Explore the practical components of my Field Study experience, including classroom observations, teaching assistantship reflections, and professional development webinars.</p>
+        </div>
+
+        <div class="option-grid">
+
+            <a href="/eportfolio/Educ 6 - Field Study/fs_courseworksheet.html" class="option-card">
+                <div class="option-icon">
+                    <img 
+                        src="/eportfolio/images/worksheets.png" 
+                        alt="Worksheets Icon"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x150/4C70A0/FFFFFF?text=Worksheets';"
+                    >
+                </div>
+                <h2 class="option-title">Course Worksheets</h2>
+                <p class="option-description">View all documented outputs and field observation sheets for this course.</p>
+            </a>
+
+            <a href="/eportfolio/Educ 6 - Field Study/fs_teachingassistantship.html" class="option-card">
+                <div class="option-icon">
+                    <img 
+                        src="/eportfolio/images/teachingassistantship.png" 
+                        alt="Teaching Assistantship Icon"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x150/4C70A0/FFFFFF?text=Teaching';"
+                    >
+                </div>
+                <h2 class="option-title">Teaching Assistantship</h2>
+                <p class="option-description">Documentation of classroom support and my two demonstration teaching sessions.</p>
+            </a>
+
+            <a href="/eportfolio/Educ 6 - Field Study/fs_webinars.html" class="option-card">
+                <div class="option-icon">
+                    <img 
+                        src="/eportfolio/images/webinar.png" 
+                        alt="Webinar Icon"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x150/4C70A0/FFFFFF?text=Webinar';"
+                    >
+                </div>
+                <h2 class="option-title">CIVErwebinar Reflections</h2>
+                <p class="option-description">Reflective essays and takeaways from professional development webinars.</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
