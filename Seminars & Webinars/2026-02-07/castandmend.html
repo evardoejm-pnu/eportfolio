@@ -1,1 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Weight of the Net: A Reflection on Casting and Mending</title>
+    <style>
+        :root {
+            --dark-blue: #1A237E;
+            --light-blue: #3949AB;
+            --mustard-yellow: #FFC107;
+            --text-color: #212121;
+            --background-color: #FFFFFF;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 15px 20px;
+            border-bottom: 3px solid var(--mustard-yellow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--mustard-yellow);
+            font-size: 1.8em;
+        }
+
+        .back-button {
+            text-decoration: none;
+            background-color: var(--mustard-yellow);
+            color: var(--dark-blue);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover { background-color: #FFEB3B; }
+
+        h2 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--mustard-yellow);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            font-size: 1.8em;
+        }
+
+        .date-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        p { text-align: justify; margin-bottom: 20px; }
+
+        /* --- Slideshow Styling --- */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .mySlides { display: none; text-align: center; }
+
+        .mySlides img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: var(--mustard-yellow); color: var(--dark-blue); }
+
+        .slide-caption {
+            background-color: #f9f9f9;
+            color: var(--light-blue);
+            padding: 10px;
+            font-size: 0.9em;
+            text-align: center;
+            border-top: 1px solid #CCC;
+        }
+
+        .dot-container { text-align: center; padding: 10px; background: #EEE; }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover { background-color: var(--dark-blue); }
+
+        /* --- Inline Image Styling --- */
+        .inline-photo {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .inline-photo img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .inline-caption {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CIVERaging on Truth Reflection</h1>
+        <a href="/eportfolio/subjects.html" class="back-button">Back to Subjects</a>
+    </header>
+
+    <div class="container">
+        <h2><span style="color:var(--mustard-yellow);">💡</span> The Weight of the Net: A Reflection on Casting and Mending</h2>
+        <span class="date-subtitle">Written on March 29, 2026</span>
+
+        <div class="slideshow-container" id="main-slideshow">
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 09-51-11.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 10-06-55.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 10-13-46.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 10-20-45.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 10-24-17.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 10-37-05.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 11-43-58.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 11-44-06.png">
+            </div>
+            <div class="mySlides mainFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/webinar_screenshots/Screenshot From 2026-02-07 11-44-21.png">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1, 'main-slideshow')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'main-slideshow')">&#10095;</a>
+            
+            <div class="slide-caption">Screenshots from the CIVEr Webinar: Harmony of the Soul</div>
+        </div>
+
+        <p>In the professional life of an educator, the "casting and mending" theme from our recent CIVEr webinar is a vital reminder that productivity and restoration are inseparable. To live a balanced life, one must not only "cast the net" into the world through hard work but also take necessary time to restore one’s own well-being. My transition from a high-pressure teaching job at the Department of Education (DepEd) to a research desk has taught me that without intentional rest, the net eventually breaks.</p>
+
+        <h3>Finding the Legend in the Storm</h3>
+        <p>To understand my journey, I look to the book <em>The Alchemist</em> by Paulo Coelho. It tells the story of a shepherd named Santiago who travels in search of a "Personal Legend"—his true purpose in life. Along the way, he learns that the path is often filled with tests that teach us how to read the "omens" of the world.</p>
+
+        <div class="inline-photo">
+            <img src="/eportfolio/Seminars & Webinars/2026-02-07/personal/don_galo_campus.jpg" alt="Don Galo Campus">
+            <div class="inline-caption">The Initial Omen: Where my DepEd journey began.</div>
+        </div>
+
+        <p>I entered the teaching profession without a clear Personal Legend, simply using the skillset I had available. I expected to cast a single throw and "feed an entire village," but I underestimated the sheer weight of the sea. The workload was immense, involving complex student issues like substance use and deep personal struggles that went far beyond the classroom. However, it was through this struggle that my true direction arose; I realized that while I enjoyed the challenge of statistical research, I was drowning in the chaos of the school system.</p>
+
+        <h3>The Broken Net: Health and Heart</h3>
+        <p>My seven months in that school were a season of endless casting without a single weekend of restoration. This neglect took a toll on me physically and emotionally. Dealing with a diagnosis of hyperthyroidism made every task feel like a mountain, while my heart was anchored to a fellow teacher whom I admired deeply.</p>
+
+        <div class="inline-photo">
+            <img src="/eportfolio/Seminars & Webinars/2026-02-07/personal/pnu_modules_stack.jpg" alt="PNU Modules Stack">
+            <div class="inline-caption">A tattered net: Balancing work, health, and academic units.</div>
+        </div>
+
+        <p>I found a unique kind of love in that storm. My colleague had been in the system for years, yet despite her excellence, she remained at an entry-level position without promotion. While it is easy for people to become indifferent in a system where effort isn't rewarded, she stayed true to her duty and her values. Her quiet dedication inspired me to keep my own values intact.</p>
+
+        <div class="slideshow-container" id="chaos-slideshow">
+            <div class="mySlides chaosFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/personal/faculty_photo.jpg">
+                <div class="slide-caption">The Faculty of Don Galo National High School</div>
+            </div>
+            <div class="mySlides chaosFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/personal/class_blurred.jpg">
+                <div class="slide-caption">The "color" in the chaos: My dear students</div>
+            </div>
+            <div class="mySlides chaosFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/personal/gift_01.jpg">
+                <div class="slide-caption">A parting gift from someone who inspired me</div>
+            </div>
+            <div class="mySlides chaosFade">
+                <img src="/eportfolio/Seminars & Webinars/2026-02-07/personal/gift_02.jpg">
+                <div class="slide-caption">Finding beauty and recognition amidst a broken net</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1, 'chaos-slideshow')">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 'chaos-slideshow')">&#10095;</a>
+            
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1, 'chaos-slideshow')"></span>
+                <span class="dot" onclick="currentSlide(2, 'chaos-slideshow')"></span>
+                <span class="dot" onclick="currentSlide(3, 'chaos-slideshow')"></span>
+                <span class="dot" onclick="currentSlide(4, 'chaos-slideshow')"></span>
+            </div>
+        </div>
+
+        <p>My physical exhaustion made emotional "mending" feel impossible, yet the tears of my students and an unexpected farewell gift from this colleague showed me I left a positive mark. My empathy allowed me to reach students who were usually closed off, proving that even a broken net can catch something beautiful.</p>
+
+        <h3>The Loneliness of Refinement</h3>
+        <div class="inline-photo">
+            <img src="/eportfolio/Seminars & Webinars/2026-02-07/personal/stat_research_desk.jpg" alt="Research Desk">
+            <div class="inline-caption">Refinement: Pursuing the Personal Legend through research.</div>
+        </div>
+
+        <p>Now, in my new role, I am being "refined" in the field of statistics and research. The rhythm of casting and mending is easier to manage now because I finally understand they go hand-in-hand. But this path can be lonely. Every morning, I wake up with a dull ache, missing the "color" of my teaching days and the colleague who showed me how to stay true to oneself despite a lack of recognition.</p>
+
+        <p>Just as I had to navigate my feelings for an avoidant crush, I have learned how to let go of my own perfectionist standards. I realized that I cannot force the world to be in accordance with my own terms. Trying to control every aspect of my life was actually doing a disservice to the beauty of mending; true restoration requires us to accept that we are not in total control. I am learning to trust God’s timing. I am no longer just a fisherman blindly throwing a net; I am a researcher learning to read the signs of the world. I now see that rest is not a luxury, but a necessity for the journey ahead.</p>
+    </div>
+
+    <script>
+        var slideIndices = {
+            "main-slideshow": 1,
+            "chaos-slideshow": 1
+        };
+
+        showSlides(1, "main-slideshow");
+        showSlides(1, "chaos-slideshow");
+
+        function plusSlides(n, id) {
+            showSlides(slideIndices[id] += n, id);
+        }
+
+        function currentSlide(n, id) {
+            showSlides(slideIndices[id] = n, id);
+        }
+
+        function showSlides(n, id) {
+            var i;
+            var slideshow = document.getElementById(id);
+            var slides = slideshow.getElementsByClassName("mySlides");
+            var dots = slideshow.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndices[id] = 1}
+            if (n < 1) {slideIndices[id] = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndices[id]-1].style.display = "block";
+            if (dots.length > 0) {
+                dots[slideIndices[id]-1].className += " active";
+            }
+        }
+    </script>
+</body>
+</html>
