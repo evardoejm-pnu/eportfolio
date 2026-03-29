@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIVEraging on Truth: Performance-Driven Educators</title>
+    <style>
+        :root {
+            --dark-blue: #1A237E;
+            --light-blue: #3949AB;
+            --mustard-yellow: #FFC107;
+            --fuchsia-pink: #FF00FF;
+            --text-color: #212121;
+            --background-color: #FFFFFF;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 15px 20px;
+            border-bottom: 3px solid var(--mustard-yellow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--mustard-yellow);
+            font-size: 1.8em;
+        }
+
+        .back-button {
+            text-decoration: none;
+            background-color: var(--mustard-yellow);
+            color: var(--dark-blue);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover { background-color: #FFEB3B; }
+
+        h2 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--mustard-yellow);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            font-size: 1.8em;
+        }
+
+        .date-subtitle {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        p { text-align: justify; margin-bottom: 20px; }
+
+        a.system-link {
+            color: #D81B60;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* --- Slideshow Container with Sidebar Nav --- */
+        .slideshow-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .slideshow-container {
+            flex-grow: 1;
+            position: relative;
+            max-width: 750px;
+            border: 2px solid #EEE;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .mySlides { display: none; text-align: center; }
+
+        .mySlides img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        .nav-btn {
+            cursor: pointer;
+            background-color: var(--fuchsia-pink);
+            color: white;
+            border: none;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            user-select: none;
+            min-width: 50px;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--mustard-yellow);
+            color: var(--dark-blue);
+            transform: scale(1.1);
+        }
+
+        .slide-caption {
+            background-color: #f9f9f9;
+            color: var(--light-blue);
+            padding: 12px;
+            font-size: 0.95em;
+            text-align: center;
+            border-top: 1px solid #CCC;
+        }
+
+        @media (max-width: 600px) {
+            .slideshow-wrapper { flex-direction: column; }
+            .nav-btn { width: 100%; padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CIVERaging on Truth Reflection</h1>
+        <a href="/eportfolio/subjects.html" class="back-button">Back to Subjects</a>
+    </header>
+
+    <div class="container">
+        <h2><span style="color:var(--mustard-yellow);">🔍</span> Beyond the Checklist: Reflective vs. Performance-Driven Teaching</h2>
+        <span class="date-subtitle">Written on March 29, 2026</span>
+
+        <div class="slideshow-wrapper">
+            <button class="nav-btn" onclick="plusSlides(-1)">&#10094;</button>
+            <div class="slideshow-container">
+                <div class="mySlides"><img src="/eportfolio/Seminars & Webinars/2026-03-21/images/Screenshot From 2026-03-21 11-54-43.png"></div>
+                <div class="mySlides"><img src="/eportfolio/Seminars & Webinars/2026-03-21/images/Screenshot From 2026-03-21 11-56-25.png"></div>
+                <div class="mySlides"><img src="/eportfolio/Seminars & Webinars/2026-03-21/images/Screenshot From 2026-03-21 12-01-07.png"></div>
+                <div class="mySlides"><img src="/eportfolio/Seminars & Webinars/2026-03-21/images/Screenshot From 2026-03-21 12-01-25.png"></div>
+                <div class="mySlides"><img src="/eportfolio/Seminars & Webinars/2026-03-21/images/Screenshot From 2026-03-21 12-02-25.png"></div>
+                <div class="slide-caption">Screenshots from CIVEr Webinar No. 2: DepEd PMES and Classroom Observations</div>
+            </div>
+            <button class="nav-btn" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+
+        <p>The second CIVEr Webinar focused on the DepEd Performance Management System (PMES). The speaker shared a very positive outlook: that Classroom Observations (COs) aren't meant to judge a teacher's worth, but are tools for growth. In this ideal version of school life, Master Teachers and raters create a "safe space" where they work together with teachers to help them improve. While this sounds good on paper, my actual experience in the system showed me a much harsher reality.</p>
+
+        <p>I applied for DepEd expecting that I could nail it. After six years of teaching in college—mostly receiving "outstanding faculty member" ratings from student evaluations—I thought my experience would translate easily. Instead, I realized DepEd expects a specific pedagogy that goes against my personal teaching philosophy. I felt I was committing a "moral injury" by doing something I didn’t believe was best for the students. It was exhausting to drop proven methods just to tick boxes for indicators that didn't feel right.</p>
+
+        <p>In my seven-month tenure, I met dedicated teachers who were willing to exert incredible effort. They have been there for years, yet many remain stuck in the same rank. I personally think of a colleague who remains one of the most excellent educators I know, yet her career stands still despite her unwavering commitment to her students. This is often due to differing priorities from principals, misguided guidance from master teachers, and indicators that fail to capture the complexities of daily classroom life.</p>
+
+        <p>When the system prioritizes rigid checklists over the actual well-being of teachers, it creates a dangerous environment. This has become a matter of survival, with recent news highlighting calls for a <a href="https://newsinfo.inquirer.net/2165022/review-of-class-observations-urged-after-teachers-death" target="_blank" class="system-link">review of class observations following the death of a teacher</a>. I eventually chose to resign because the pressure to conform was too much for my health and my beliefs.</p>
+
+        <p>I do not know what the future holds for me, or if I will ever come back to teaching. But I know I love working with students—a passion that was only strengthened during my short time in DepEd. I am currently in a desk job that helps me grow in statistics and research, yet there is a certain "color" missing from a workplace when you aren't surrounded by children hungry to learn and inspiring co-teachers who still champion integrity despite a lack of recognition. Ultimately, for a teacher to truly do their best, they need to feel safe enough to teach in their own way and know that their hard work will actually lead to a future in the profession.</p>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
