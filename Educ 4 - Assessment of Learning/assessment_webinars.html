@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webinar Showcases - AY 2025-2026</title>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- Deep Twilight Dark Mode Theme Variables --- */
+        :root {
+            --primary-color: #FFD700;
+            --accent-color: #4C70A0;
+            --bg-dark: #213B59; 
+            --card-bg: #304D70; 
+            --text-light: #F0F4F8; 
+            --text-subtle: #C0C8D0; 
+            --text-hover: #19314A; 
+            --reflection-text: #F0F4F8; 
+            --font-family: 'Inter', sans-serif;
+            --font-size-base: 1.1rem;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            margin: 0;
+            padding: 50px 0;
+            font-size: var(--font-size-base);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: var(--text-subtle);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .section-heading {
+            color: var(--text-light);
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--text-subtle);
+        }
+
+        /* --- Revealed Entry Styling --- */
+        .webinar-entry {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--accent-color);
+            overflow: hidden;
+        }
+
+        .entry-header {
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .entry-header i {
+            margin-right: 15px;
+        }
+
+        .entry-content {
+            padding: 25px;
+        }
+
+        .summary-and-button {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 25px;
+        }
+
+        .summary-box {
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.2); 
+            border-radius: 4px;
+            color: var(--text-light);
+            font-style: italic;
+            text-align: justify;
+        }
+
+        .view-btn {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 80px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            transition: 0.3s;
+        }
+
+        .view-btn:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        @media (max-width: 800px) {
+            .summary-and-button { grid-template-columns: 1fr; }
+            .view-btn { height: auto; padding: 20px; min-height: auto;}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="/eportfolio/subjects.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Core Subjects</a>
+
+        <div class="header">
+            <h1>Showcasing Professional Growth</h1>
+            <p><b>AY 2025-2026 Term 2</b> | Webinar Series Reflection</p>
+            <p style="margin-top: 15px;">A collection of insights and reflections gathered from the CIVEr webinar series, exploring the intersection of professional excellence, spiritual mending, and the systemic realities of the teaching profession.</p>
+        </div>
+
+        <h2 class="section-heading">Webinar Artifacts</h2>
+
+        <div class="webinar-entry">
+            <div class="entry-header">
+                <i class="fas fa-anchor"></i> Webinar 1: CIVEraging on Truth (Harmony of the Soul)
+            </div>
+            <div class="entry-content">
+                <div class="summary-and-button">
+                    <a href="/eportfolio/Seminars & Webinars/2026-02-07/castandmend.html" class="view-btn">View Full Reflection</a>
+                    <p class="summary-box">
+                        This reflection centers on the "Casting and Mending" framework. It explores how the relentless demands of the teaching profession can break a "net" that is not intentionally restored. Moving from the high-pressure environment of DepEd to research, I reflect on how personal restoration is not a luxury, but a spiritual and physical necessity for a sustainable career.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="webinar-entry">
+            <div class="entry-header">
+                <i class="fas fa-chalkboard-teacher"></i> Webinar 2: CIVEraging on Truth (Performance-Driven Educators)
+            </div>
+            <div class="entry-content">
+                <div class="summary-and-button">
+                    <a href="/eportfolio/Seminars & Webinars/2026-03-21/pmes.html" class="view-btn">View Full Reflection</a>
+                    <p class="summary-box">
+                        Focused on the DepEd Performance Management System (PMES), this piece contrasts the ideal of Classroom Observations as "tools for growth" with the harsh reality of "ticking boxes". I reflect on the struggle to maintain pedagogical identity within a rigid system and advocate for a shift from a "trap-like" observation culture to one rooted in genuine, safe conversation.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
