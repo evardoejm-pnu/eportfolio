@@ -14,12 +14,14 @@
             --primary-color: #FFD700; 
             /* Subtle Academic Blue (Secondary Accent) */
             --accent-color: #4C70A0; 
+            /* Dark Blue for hover text */
+            --dark-blue: #213B59;
 
             /* Background and Text */
-            --bg-dark: #213B59; /* Lighter, more visible deep blue background */
-            --card-bg: #304D70; /* Lighter card contrast */
-            --text-light: #F0F4F8; /* Main light text for dark mode */
-            --text-subtle: #C0C8D0; /* Subtle secondary text */
+            --bg-dark: #213B59; 
+            --card-bg: #304D70; 
+            --text-light: #F0F4F8; 
+            --text-subtle: #C0C8D0; 
 
             /* Typography */
             --font-family: 'Inter', sans-serif;
@@ -90,15 +92,13 @@
 
         /* --- Grid and Option Card Styles --- */
 
-        /* Three-Column Layout for Options */
         .option-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+            grid-template-columns: 1fr 1fr 1fr; 
             gap: 30px;
             margin-top: 40px;
         }
 
-        /* Individual Option Button/Card */
         .option-card {
             background-color: var(--card-bg);
             display: flex;
@@ -110,15 +110,38 @@
             text-decoration: none;
             color: var(--text-light);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            border: 4px solid var(--accent-color); /* Initial blue border */
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, color 0.3s;
-            height: 320px; /* Slightly taller for 3-card balance */
+            border: 4px solid var(--accent-color); 
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, background-color 0.3s;
+            height: 320px; 
         }
         
         .option-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            border-color: var(--primary-color); /* Gold hover border */
+            border-color: var(--primary-color); 
+        }
+
+        /* Full Width Custom Button */
+        .full-width-card {
+            grid-column: 1 / -1; /* Spans all 3 columns */
+            height: auto;
+            padding: 25px;
+        }
+
+        .full-width-card:hover {
+            background-color: var(--primary-color);
+        }
+
+        .full-width-card:hover .option-title, 
+        .full-width-card:hover .report-author {
+            color: var(--dark-blue) !important;
+        }
+
+        .report-author {
+            font-size: 0.85rem;
+            color: var(--text-subtle);
+            margin-top: 5px;
+            transition: color 0.3s;
         }
 
         /* Icon Container */
@@ -150,10 +173,10 @@
             color: var(--accent-color); 
             transition: color 0.3s;
             line-height: 1.2;
-            margin-bottom: 10px;
+            margin: 0;
         }
 
-        .option-card:hover .option-title {
+        .option-card:not(.full-width-card):hover .option-title {
             color: var(--primary-color); 
         }
 
@@ -162,19 +185,19 @@
             color: var(--text-subtle);
             text-align: center;
             font-size: 0.95rem;
-            margin-top: 2px;
+            margin-top: 10px;
         }
 
         /* Responsive adjustments */
         @media (max-width: 1100px) {
             .option-grid {
-                grid-template-columns: 1fr 1fr; /* 2 columns for tablets */
+                grid-template-columns: 1fr 1fr; 
             }
         }
 
         @media (max-width: 768px) {
             .option-grid {
-                grid-template-columns: 1fr; /* 1 column for mobile */
+                grid-template-columns: 1fr; 
                 gap: 25px;
             }
             .option-card {
@@ -232,6 +255,11 @@
                 </div>
                 <h2 class="option-title">CIVErwebinar Reflections</h2>
                 <p class="option-description">Reflective essays and takeaways from professional development webinars.</p>
+            </a>
+
+            <a href="/fieldstudyreport/index.html" class="option-card full-width-card">
+                <h2 class="option-title">Field Study Report - School & Community Partnerships</h2>
+                <span class="report-author">Report by Fatima Gallo Cielo & Ezekiel John M. Evardo</span>
             </a>
 
         </div>
