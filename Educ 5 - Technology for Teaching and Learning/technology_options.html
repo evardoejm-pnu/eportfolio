@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology for Teaching and Learning - Options</title>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* --- Deep Twilight Dark Mode Theme Variables --- */
+        :root {
+            --primary-color: #FFD700; 
+            --accent-color: #4C70A0; 
+            --dark-blue: #213B59;
+
+            --bg-dark: #213B59; 
+            --card-bg: #304D70; 
+            --text-light: #F0F4F8; 
+            --text-subtle: #C0C8D0; 
+
+            --font-family: 'Inter', sans-serif;
+            --font-size-base: 1.1rem;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.6;
+            margin: 0;
+            padding: 50px 0;
+            font-size: var(--font-size-base);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--primary-color); 
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            color: var(--text-subtle);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            padding: 8px 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .back-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .option-card {
+            background-color: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-light);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 4px solid var(--accent-color); 
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s, background-color 0.3s;
+            height: 320px; 
+        }
+        
+        .option-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border-color: var(--primary-color); 
+        }
+
+        .full-width-card {
+            grid-column: 1 / -1;
+            height: auto;
+            padding: 35px 25px;
+        }
+
+        .full-width-card:hover {
+            background-color: var(--primary-color);
+        }
+
+        .full-width-card:hover .option-title, 
+        .full-width-card:hover .report-description {
+            color: var(--dark-blue) !important;
+        }
+
+        .option-icon {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .option-card:hover .option-icon img {
+            transform: scale(1.05);
+        }
+
+        .option-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--accent-color); 
+            transition: color 0.3s;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .option-card:not(.full-width-card):hover .option-title {
+            color: var(--primary-color); 
+        }
+
+        .option-description {
+            color: var(--text-subtle);
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .option-grid {
+                grid-template-columns: 1fr; 
+                gap: 25px;
+            }
+            .option-card {
+                height: auto;
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <a href="../subjects.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Core Subjects</a>
+
+        <div class="header">
+            <h1>Technology for Teaching and Learning</h1>
+            <p><strong>2E-Educ-5</strong> | Prof. Lovely Airein DG. Albania</p>
+            <p style="margin-top: 15px;">A collection of academic outputs exploring the integration of digital tools, instructional models, and professional webinars in the modern classroom.</p>
+        </div>
+
+        <div class="option-grid">
+
+            <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/technology_worksheets.html" class="option-card">
+                <div class="option-icon">
+                    <img 
+                        src="/eportfolio/images/worksheets.png" 
+                        alt="Worksheets Icon"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x150/4C70A0/FFFFFF?text=Worksheets';"
+                    >
+                </div>
+                <h2 class="option-title">Course Worksheets</h2>
+                <p class="option-description">Documentation of technical activities and pedagogical exercises.</p>
+            </a>
+
+            <a href="/eportfolio/Educ 6 - Field Study/fs_webinars.html" class="option-card">
+                <div class="option-icon">
+                    <img 
+                        src="/eportfolio/images/webinar.png" 
+                        alt="Webinar Icon"
+                        onerror="this.onerror=null; this.src='https://placehold.co/150x150/4C70A0/FFFFFF?text=Webinar';"
+                    >
+                </div>
+                <h2 class="option-title">CIVErwebinar Reflections</h2>
+                <p class="option-description">Takeaways from professional development sessions on educational technology.</p>
+            </a>
+
+            <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/artifacts/Report - ISD & TIM.pdf" target="_blank" class="option-card full-width-card">
+                <h2 class="option-title">My Report: Instructional Systems Design & Technology Integration Models</h2>
+                <p class="option-description report-description">An in-depth analysis of ISD frameworks and modern TIM applications.</p>
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
