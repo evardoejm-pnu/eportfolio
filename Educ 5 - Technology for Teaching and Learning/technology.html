@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-EDUC 5 | Digital Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        :root {
+            --primary-color: #FFD700;    /* PNU Gold */
+            --accent-color: #4C70A0;     /* Academic Blue */
+            --disclaimer-bg: #593030;    /* Dark red/brown */
+            --disclaimer-text: #FFECB3;  /* Light yellow */
+            --bg-dark: #213B59;          /* Deep blue background */
+            --card-bg: #304D70;          /* Card contrast */
+            --link-bg: #4a678f;          /* Link card background */
+            --sidebar-bg: #172A47;       /* Nav background */
+            --text-light: #FFFFFF;
+            --text-subtle: #C0C8D0; 
+            --nav-height: 70px;
+            --tab-red: #cc2b2b;          /* Red color for Reflection tab */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        header {
+            background: var(--sidebar-bg);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 { color: var(--primary-color); margin-bottom: 0.5rem; }
+        
+        .bio {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--text-subtle);
+        }
+
+        .philosophy {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+            text-align: left;
+        }
+
+        .philosophy h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* --- Navigation Bar --- */
+        nav {
+            background: var(--sidebar-bg);
+            position: sticky;
+            top: 0;
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .nav-title {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 60px 0 25px; 
+            background-color: var(--primary-color);
+            color: var(--bg-dark);
+            font-weight: 900;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-grow: 1;
+            height: 100%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-subtle);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--primary-color); }
+
+        /* --- Diagonal Red Reflection Tab --- */
+        nav a.reflection-tab {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 40px 0 60px; 
+            background-color: var(--tab-red);
+            color: #FFFFFF;
+            font-weight: 900;
+            clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+            margin-left: -1px;
+        }
+
+        nav a.reflection-tab:hover {
+            background-color: #e63939;
+            color: #FFFFFF;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .cilo-section {
+            background: var(--card-bg);
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-top: 1px solid var(--link-bg);
+            scroll-margin-top: calc(var(--nav-height) + 20px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .cilo-title {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+        }
+
+        .cilo-desc {
+            font-style: italic;
+            color: var(--text-subtle);
+            margin-bottom: 1.5rem;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        /* --- Clickable Artifact Link Box --- */
+        .artifact-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            background: var(--link-bg);
+            border: 1px dashed var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .artifact-link h3 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .artifact-link:hover {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            border-style: solid;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .artifact-link:hover h3 { color: var(--bg-dark); }
+
+        .reflection-area {
+            background: var(--disclaimer-bg);
+            color: var(--disclaimer-text);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .reflection-area h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* --- Synthesis Section --- */
+        .synthesis-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--primary-color);
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            scroll-margin-top: calc(var(--nav-height) + 20px);
+        }
+
+        .synthesis-card h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
+
+        /* --- Webinar Reflection Button --- */
+        .webinar-btn {
+            text-decoration: none;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            margin-top: -1.5rem; /* Seamless flow from reflection card */
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .webinar-btn:hover {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+
+        .webinar-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 1.5rem;
+            object-fit: contain;
+        }
+
+        .webinar-content h3 {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.3rem;
+        }
+
+        .webinar-content p {
+            margin: 5px 0 0 0;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .webinar-btn:hover .webinar-content h3, 
+        .webinar-btn:hover .webinar-content p {
+            color: var(--bg-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: var(--sidebar-bg);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <img src="/eportfolio/images/profile.jpg" alt="Ezekiel John M. Evardo" class="profile-photo">
+            <h1>Ezekiel John M. Evardo</h1>
+            <p class="bio">
+                I currently serve as a Labor and Employment Officer I at the Institute for Labor Studies (DOLE). With a background as a Senior High School Teacher at Don Galo National High School, I initially pursued the PBCTP to secure a permanent position within the Department of Education. While I have shifted my primary career focus toward Statistics and Research, I remain committed to return in part-time teaching in higher education, having served as a college instructor at the Polytechnic University of the Philippines - Sta. Mesa, Department of Psychology. I find this program invaluable for bridging my technical expertise with effective pedagogy, supporting my long-term goals for professional advancement.
+            </p>
+            <div class="philosophy">
+                <h3>Teaching Philosophy on Technology</h3>
+                <p>
+                   I believe that technology is a powerful and necessary tool for learning, but its potential is strictly limited by the digital divide. My philosophy is that no pedagogy is truly effective if it is inaccessible. Having personally experienced the realities of being a public secondary school teacher, I believe the role of educators is to overcome this divide by finding resourceful and creative ways to implement available technologies for everyone. This maximizes the efficiency of learning while ensuring it remains effective even when technology is scarce. For me, integrating technology is not simply using advanced or 'bleeding-edge' tools, but choosing the right, accessible ones that students can fully utilize and appreciate.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-title">Course Intended Learning Outcomes</div>
+        <div class="nav-links">
+            <a href="#cilo1">Theoretical Foundations</a>
+            <a href="#cilo2">Learning Environment</a>
+            <a href="#cilo3">Instructional Designs</a>
+            <a href="#cilo4">Ethics & Policies</a>
+            <a href="#cilo5">Design & Media</a>
+            <a href="#final-reflection" class="reflection-tab">Reflection</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="cilo1" class="cilo-section">
+            <h2 class="cilo-title">CILO 1: Theoretical Foundations</h2>
+            <span class="cilo-desc">This CILO focuses on showcasing the learning theories and pedagogical principles that provide a framework for effective technology integration across various instructional environments. Our discussion on psychological foundations as well as different perspectives in using Technology in Instructions establishes how these theories guide the enhancement of student engagement and learning through digital tools.</span>
+            
+            <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/artifacts/artifacts/cilo1.pdf" target="_blank" class="artifact-link">
+                <h3>Worksheet 1: Technology Enhanced Learning Task</h3>
+                <p>A worksheet on creating a technology-enhanced learning task highlighting the philosophical foundations and how technology is present in the task. </p>
+            </a>
+
+            <div class="reflection-area">
+                <h4>Theoretical Frameworks in Digital Instruction</h4>
+                <p>This artifact is an individual worksheet featuring a Grade 7 TLE performance task where students design a "Personal Student Profile" using word processing software. I chose this because it directly applies the theoretical foundations of CILO 1, demonstrating that theoretical frameworks are not just preliminary topics that are usually taught at the first few weeks of a course but are actually essential guides for meaningful technology integration. Developing this task helped me realize that a grounded instruction provides a clear pedagogical direction, ensuring technology serves as a tool for active construction rather than just a digital substitute. In my future classroom, I will use these skills to ensure every digital activity I design is rooted in a specific learning theory to maximize student engagement. By staying grounded in these foundations, I can transition from teaching "how to use a tool" to teaching "how to think with a tool."</p>
+            </div>
+        </section>
+
+        <section id="cilo2" class="cilo-section">
+            <h2 class="cilo-title">CILO 2: Designing Effective Learning Environment</h2>
+            <span class="cilo-desc">This CILO focuses on designing learning environments grounded in appropriate instructional systems design models. Our discussion on the historical foundations and evolution of educational technology provides the foundational knowledge of how previous innovations inform the design frameworks currently used in the academe.</span>
+            
+            <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/artifacts/artifacts/cilo2.pdf" target="_blank" class="artifact-link">
+                <h3>Report on the Historical Foundation on Educational Technology</h3>
+                <p>The slide presentation of the group reporters regarding the historical foundation on how technology was integrated in the education sector.</p>
+            </a>
+
+            <div class="reflection-area">
+                <h4>Bridging Evolution and Design</h4>
+                <p>This artifact is the presentation deck of the group reporters for this CILO explaining the historical foundations and evolution of educational technology, from early instructional tools to the human-centered Education 5.0 era. Since we did not have any worksheets or activities for this CILO, I have chosen this presentation because it shows how education has evolved throughout time—moving from a reliance on the teacher's mastery of the subject matter to the present day where education, as I see it, is already decentralized. Teachers now act as the "guide on the side" facilitators, letting students learn and explore topics and the learning environment on their own. For this teaching style to work, technology must be seen as a necessary tool, not just an optional one, for the success of the instruction. This has helped me reach CILO 2 by emphasizing the important contexts involved in selecting instructional design models that are relevant in today's classroom. In my future classroom, I will allow the historical foundations to guide my mindset in adapting technology as a form of learning instruction, ensuring that I go beyond using technology for the sake of hitting classroom observation indicators or simply using it for the sake of using it. I will strive to ensure that my pedagogical style fits the direction that education is meant to take to avoid obsolete practices that are evidently stagnating learners in terms of their educational careers and direction.</p>
+            </div>
+        </section>
+
+        <section id="cilo3" class="cilo-section">
+            <h2 class="cilo-title">CILO 3: Frameworks on Instructional Designs and Technology Integration</h2>
+            <span class="cilo-desc">This CILO focuses on how instructional design frameworks guide teachers in facilitating learning through systematic planning and theoretical application. Our discussion encompassed various instructional design theories—including Gagne’s Nine Events, TPACK, and the PEAT model—alongside systemic models like ADDIE, ASSURE, and SAMR, which provide the structure for purposeful and effective technology integration.</span>
+            
+            <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/artifacts/artifacts/cilo3.pdf" target="_blank" class="artifact-link">
+                <h3>Worksheet 3: Instructional Design Theories in Technology-Enhanced Learning Task</h3>
+                <p>A worksheet proposing an instructional design theoretical framework in the previous learning task outlined in Worksheet 1 (CILO 1).</p>
+            </a>
+
+            <div class="reflection-area">
+                <h4>Strategic Frameworks for Discovery Learning</h4>
+                <p>This artifact is an individual worksheet where I revisited my first worksheet (CILO 1), where I created a technology-enhanced performance task and aligned it with the instructional design theories discussed in class. I chose this because it shows how I should be meticulously mindful of how I use and implement technology in my performance task while still viewing it through the lens of Constructivism, which was my chosen theoretical foundation from the first worksheet. This helped me achieve CILO 3 by requiring me to point out the specific expected roles that teachers and students possess when conducting the performance task to ensure that technology is used as an active learning aid rather than a substitute for a typical written output. In my future classroom, I will be guided by these instructional design theories in order to go beyond the conventional teaching styles that I have adapted during my almost seven years of teaching at both the tertiary and secondary levels. I mostly taught with slide presentations where software like MS PowerPoint or LibreOffice Impress was only seen as a blackboard substitute in a typical classroom. I will now try to create technology-centered discussions that allow students to learn by doing the task at hand, discover the user interface of the software they are using, and let the entire performance task be the teacher to the students. In this way, I can ensure that every tool that I use in my class is intentionally chosen to facilitate student learning, engagement, self-exploration, and self-expression.</p>
+            </div>
+        </section>
+
+        <section id="cilo4" class="cilo-section">
+            <h2 class="cilo-title">CILO 4: Digital Citizenship & Ethical Technology Stewardship</h2>
+            <span class="cilo-desc">This CILO focuses on advocating the ethical and legal use of technology to ensure that the digital learning environment is safe and professional. Our discussion covered different policies and ISTE standards on ICT along with relevant legal and ethical frameworks—including copyright, data privacy, netiquette, and the responsible use of Artificial Intelligence—for us to be guided in our future practice of teaching.</span>
+            
+            <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/artifacts/artifacts/cilo4.pdf" target="_blank" class="artifact-link">
+                <h3>Report on Ethical Issues in Today's Classroom ICT Use</h3>
+                <p>The slide presentation of the topic reporter on the different dilemmas and laws to be considered in the conduct of using digital technology in the learning environment.</p>
+            </a>
+
+            <div class="reflection-area">
+                <h4>Ethics and Advocacy in the Digital Classroom</h4>
+                <p>This artifact is the presentation deck from the topic reporter on the ethical issues that teachers typically face in their daily routines. Since we did not have any worksheets or group activities for this topic, I chose this presentation deck because the interactive part of the report—where the reporter presented hypothetical scenarios of daily classroom experiences and asked how we would conduct ourselves to address them—was truly engaging and insightful regarding how a teacher deals with the day-to-day experiences that students present in class. Learning the different legal and ethical responsibilities that we must carry as future educators is essential, as it helps us to make informed decisions in our future practice. This presentation helped me achieve CILO 4 by teaching me how to advocate for a safe digital learning environment, how to uphold data privacy, and how to ground my interactions with my students within the Safe Spaces Act. In my future classroom, I will use this knowledge to set house rules and clear boundaries for interacting with each other—not only between the teacher and the students but also among the students themselves</p>
+            </div>
+        </section>
+
+        <section id="cilo5" class="cilo-section">
+            <h2 class="cilo-title">CILO 5: Design and Integration of Instructional Media</h2>
+            <span class="cilo-desc">This CILO focuses on designing learning environments through integrating non-conventional instructional tools and assessment strategies. Our discussion spanned from Edgar Dale's Cone of Experience to the practical application of traditional audio-visual media and innovative digital resources—including HYFLEX models, Flipped Classrooms, and MOOCs. By utilizing such technologies, the teachers are ensuring that their instructions are locally sensitive and globally responsive.</span>
+            
+            <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/artifacts/artifacts/cilo5.pdf" target="_blank" class="artifact-link">
+                <h3>Ms. Lovely's Presentation on Selecting and Designing Instructional Materials</h3>
+                <p>On the different levels of cognitive domains as discussed in Edgar Dale's Cone of Experience & Revised Bloom's Taxonomy.</p>
+            </a>
+
+            <div class="reflection-area">
+                <h4>Cognitive Engagement in Media Integration</h4>
+                <p>This artifact is Ms. Lovely's presentation deck from the last topic, which explores designing technology-enhanced instruction and assessment. Given that we never had a dedicated worksheet on the topic, I chose this because it highlights how Edgar Dale's Cone of Experience and the Revised Bloom's Taxonomy can create structure and direction for designing and implementing technology-enhanced instruction in the class. This has helped me achieve CILO 5 by demonstrating how to be selective with the different media I will use for my classes to ensure that my lessons are reaching higher order thinking skills through both the Dale and Bloom frameworks. In my future classroom, I will be mindful of the instructional media I use so that I can leverage technology to improve critical and creative thinking levels. Through such frameworks, I will be guided to create much more culturally appropriate and responsive digital media materials for my students to use.</p>
+            </div>
+        </section>
+
+        <section id="final-reflection" class="synthesis-card">
+            <h2>Synthesis & Final Reflection</h2>
+            <p>
+                The most important takeaway I have gained from this course is the mindful use of technology as an educator. This course has made me pause and reflect on my practice as a college instructor for six years and my seven-month tenure in DepEd: <strong><i>"How do I really use technology in my classes? Do I simply use it as a substitute for my classroom's blackboard or whiteboard and my students' notebooks?"</i></strong> I had always seen technology as a convenience: I could use presentation decks so I wouldn't have to write on the board, and I could conveniently distribute those decks so my students wouldn't have to purchase pens and notebooks. My goal remains to integrate technology into my classes in a way that ensures accessibility for all my students.
+            </p>
+            <p>
+                <strong>CILOs 1 to 3</strong> helped me learn how to map theories onto my learning plans and instructional approaches. I realized how a deliberate planning and injection of technology into my lesson plans can help me improve as a future educator, regardless of the level of education I choose. <strong>CILO 2</strong> also helped me realize that aiming to "decentralize" the source of learning means making technology an essential and indispensable requirement for success. <strong>CILO 4</strong> grounded the discussion by serving as a strong reminder to be mindful of the ethical and legal grounds of technology; it is not a substitute for actual human teachers. Lastly, by <strong>CILO 5</strong>, I realized that the instructional media we choose to use should be locally sensitive yet globally responsive.  
+            </p>
+            <p>
+               As a future instructor, I will strive to use technology inclusively by prioritizing accessibility over simply using tools because they are modern or recent. I intend to select tools that are available to all students regardless of socio-economic status, ensuring my pedagogical decisions are fair. By choosing free and open-source software, I can facilitate a learning environment that respects the unique backgrounds of Filipino learners while preparing them for a digital future.
+            </p>
+        </section>
+
+        <a href="/eportfolio/Educ 5 - Technology for Teaching and Learning/technology_webinars.html" class="webinar-btn">
+            <img src="/eportfolio/images/webinar.png" alt="Webinar Icon" class="webinar-icon">
+            <div class="webinar-content">
+                <h3>CIVEr Webinar Reflection</h3>
+                <p>Reflective essays and key takeaways from professional development webinars.</p>
+            </div>
+        </a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ezekiel John M. Evardo | Philippine Normal University | E-EDUC 5</p>
+    </footer>
+
+</body>
+</html>
